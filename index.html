@@ -1148,64 +1148,27 @@
 </div>
 
 <script>
-  // 【修复1】防垃圾回收：使用全局变量死死拽住语音对象，防止安卓偷偷清理
-  window.utteranceHolder = null;
-
-  // 提前唤醒并加载系统的语音库
-  if ('speechSynthesis' in window) {
-    window.speechSynthesis.getVoices();
-    window.speechSynthesis.onvoiceschanged = function() {
-      window.speechSynthesis.getVoices();
-    };
-  }
-
-  /* --- 终极发音函数 (专治安卓不服) --- */
+  /* --- 国内特供版发音：调用网易有道词典云端接口 (无需翻墙，支持所有安卓) --- */
   function speak(text) {
-    if (!('speechSynthesis' in window)) {
-      alert("TTS no soportado. (此设备不支持语音功能)");
-      return;
-    }
-
-    // 过滤 HTML 标签并添加句号（让发音有自然的降调）
-    let cleanText = text.replace(/<[^>]*>/g, '') + ".";
-
-    // 【修复2】无延迟打断：不再使用 setTimeout，立即在点击事件内停止旧声音并准备新声音
-    window.speechSynthesis.cancel();
-
-    let utterance = new SpeechSynthesisUtterance(cleanText);
+    // 1. 去除文本里的 HTML 标签
+    let cleanText = text.replace(/<[^>]*>/g, '');
     
-    // 把当前语音对象赋给全局变量，防止安卓将其作为垃圾回收
-    window.utteranceHolder = utterance;
-
-    // 基础设置：设置宽泛的西语简写，语速调至0.9
-    utterance.lang = 'es'; 
-    utterance.rate = 0.9;
-    utterance.pitch = 1.0;
-
-    // 【修复3】动态方言匹配：不再强求 es-ES，根据安卓手机实际装了什么西语包来适配
-    let voices = window.speechSynthesis.getVoices();
-    if (voices.length > 0) {
-      // 找出所有带 'es' 的语音包 (例如 es-ES, es-US, es-MX 等)
-      let esVoices = voices.filter(v => v.lang.toLowerCase().includes('es'));
-      
-      if (esVoices.length > 0) {
-        // 优先挑选 Google 官方、网络云端或高质量的高级发音人
-        let bestVoice = esVoices.find(v => 
-          v.name.includes('Google') || 
-          v.name.includes('Network') || 
-          v.name.includes('Premium')
-        );
-        
-        let finalVoice = bestVoice || esVoices[0];
-        utterance.voice = finalVoice;
-        
-        // 核心：把发音指令的语言强制设为和语音包一模一样，防止安卓罢工
-        utterance.lang = finalVoice.lang; 
-      }
-    }
-
-    // 立即执行发音，不加任何 Timeout 延迟
-    window.speechSynthesis.speak(utterance);
+    // 2. 拼接有道词典的语音接口 URL (le=es 代表西班牙语)
+    // 这个接口国内完全直连，速度快且发音纯正
+    let audioUrl = "https://dict.youdao.com/dictvoice?audio=" + encodeURIComponent(cleanText) + "&le=es";
+    
+    // 3. 像播放音乐一样直接播放音频
+    let audio = new Audio(audioUrl);
+    
+    audio.play().catch(function(error) {
+        console.log("云端播放失败，尝试本地兜底发音...", error);
+        // 万一没网，兜底用回本地系统发音
+        if ('speechSynthesis' in window) {
+            let utterance = new SpeechSynthesisUtterance(cleanText);
+            utterance.lang = 'es-ES';
+            window.speechSynthesis.speak(utterance);
+        }
+    });
   }
 
   /* --- TAB 切换功能 --- */
