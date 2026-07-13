@@ -1148,79 +1148,67 @@
 </div>
 
 <script>
-  // 【修复 1】全局数组：防止安卓系统过早回收语音对象导致无声
-  window.utterances = [];
-  let availableVoices = [];
+  // 【修复1】防垃圾回收：使用全局变量死死拽住语音对象，防止安卓偷偷清理
+  window.utteranceHolder = null;
 
-  function loadVoices() {
-    availableVoices = window.speechSynthesis.getVoices();
-  }
-
+  // 提前唤醒并加载系统的语音库
   if ('speechSynthesis' in window) {
-    loadVoices();
-    // 兼容不同浏览器的事件绑定
-    if (window.speechSynthesis.onvoiceschanged !== undefined) {
-      window.speechSynthesis.onvoiceschanged = loadVoices;
-    }
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = function() {
+      window.speechSynthesis.getVoices();
+    };
   }
 
-  /* --- TTS FUNCTION (全平台兼容增强版) --- */
+  /* --- 终极发音函数 (专治安卓不服) --- */
   function speak(text) {
     if (!('speechSynthesis' in window)) {
-      console.log("TTS not supported.");
+      alert("TTS no soportado. (此设备不支持语音功能)");
       return;
     }
 
-    let cleanText = text.replace(/<[^>]*>/g, '');
-    cleanText = cleanText + "."; // 标点欺骗，保持语调自然
-    
-    // 停止之前的发音
+    // 过滤 HTML 标签并添加句号（让发音有自然的降调）
+    let cleanText = text.replace(/<[^>]*>/g, '') + ".";
+
+    // 【修复2】无延迟打断：不再使用 setTimeout，立即在点击事件内停止旧声音并准备新声音
     window.speechSynthesis.cancel();
-    
+
     let utterance = new SpeechSynthesisUtterance(cleanText);
     
-    // 【修复 1 续】将当前发音对象存入全局数组，强迫安卓浏览器记住它
-    window.utterances.push(utterance);
-    
-    // 读完之后清理掉，释放内存
-    utterance.onend = function() {
-        const index = window.utterances.indexOf(utterance);
-        if (index > -1) {
-            window.utterances.splice(index, 1);
-        }
-    };
+    // 把当前语音对象赋给全局变量，防止安卓将其作为垃圾回收
+    window.utteranceHolder = utterance;
 
-    utterance.rate = 0.9; 
+    // 基础设置：设置宽泛的西语简写，语速调至0.9
+    utterance.lang = 'es'; 
+    utterance.rate = 0.9;
     utterance.pitch = 1.0;
-    utterance.lang = 'es-ES'; 
-    
-    // 每次发音前再次尝试获取语音包（解决安卓端可能初始加载为空的问题）
-    let voices = window.speechSynthesis.getVoices();
-    if (voices.length === 0) voices = availableVoices;
 
+    // 【修复3】动态方言匹配：不再强求 es-ES，根据安卓手机实际装了什么西语包来适配
+    let voices = window.speechSynthesis.getVoices();
     if (voices.length > 0) {
-      // 【修复 3】放宽匹配条件，兼容安卓底层 es-ES, es_ES, es-MX 等各种写法
+      // 找出所有带 'es' 的语音包 (例如 es-ES, es-US, es-MX 等)
       let esVoices = voices.filter(v => v.lang.toLowerCase().includes('es'));
       
       if (esVoices.length > 0) {
-        // 优先寻找高音质或原生引擎 (安卓一般是 Google TTS, 有时带 Network 后缀质量更好)
+        // 优先挑选 Google 官方、网络云端或高质量的高级发音人
         let bestVoice = esVoices.find(v => 
-          v.name.includes('Premium') || 
           v.name.includes('Google') || 
-          v.name.includes('Microsoft') ||
-          v.name.includes('Network')
+          v.name.includes('Network') || 
+          v.name.includes('Premium')
         );
-        utterance.voice = bestVoice || esVoices[0];
+        
+        let finalVoice = bestVoice || esVoices[0];
+        utterance.voice = finalVoice;
+        
+        // 核心：把发音指令的语言强制设为和语音包一模一样，防止安卓罢工
+        utterance.lang = finalVoice.lang; 
       }
     }
 
-    // 【修复 2】核心修复：安卓系统的 cancel() 和 speak() 执行太快会冲突，加 50ms 缓冲延迟
-    setTimeout(() => {
-        window.speechSynthesis.speak(utterance);
-    }, 50);
+    // 立即执行发音，不加任何 Timeout 延迟
+    window.speechSynthesis.speak(utterance);
   }
 
-  /* --- TAB SWITCHING --- */
+  /* --- TAB 切换功能 --- */
   function switchTab(tabId) {
     document.querySelectorAll('.section-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
@@ -1234,7 +1222,7 @@
     });
   }
 
-  /* --- DATA FOR NUMBERS & VOCABULARY --- */
+  /* --- 页面初始化与数据渲染 --- */
   const numbersEs = [
     "cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez",
     "once","doce","trece","catorce","quince","dieciséis","diecisiete","dieciocho","diecinueve","veinte",
