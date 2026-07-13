@@ -1148,27 +1148,37 @@
 </div>
 
 <script>
-  /* --- 国内特供版发音：调用网易有道词典云端接口 (无需翻墙，支持所有安卓) --- */
+  // 智能识别当前设备是否为苹果设备 (iPhone, iPad, Mac)
+  const isAppleDevice = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+  /* --- 智能双引擎发音系统 (苹果原生 + 安卓云端) --- */
   function speak(text) {
-    // 1. 去除文本里的 HTML 标签
     let cleanText = text.replace(/<[^>]*>/g, '');
-    
-    // 2. 拼接有道词典的语音接口 URL (le=es 代表西班牙语)
-    // 这个接口国内完全直连，速度快且发音纯正
-    let audioUrl = "https://dict.youdao.com/dictvoice?audio=" + encodeURIComponent(cleanText) + "&le=es";
-    
-    // 3. 像播放音乐一样直接播放音频
-    let audio = new Audio(audioUrl);
-    
-    audio.play().catch(function(error) {
-        console.log("云端播放失败，尝试本地兜底发音...", error);
-        // 万一没网，兜底用回本地系统发音
-        if ('speechSynthesis' in window) {
-            let utterance = new SpeechSynthesisUtterance(cleanText);
-            utterance.lang = 'es-ES';
-            window.speechSynthesis.speak(utterance);
-        }
-    });
+
+    if (isAppleDevice) {
+      // 【苹果专属通道】：直接同步调用系统顶级原生发音，完美绕过安全拦截
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        let utterance = new SpeechSynthesisUtterance(cleanText + "."); // 句号让语调自然下降
+        utterance.lang = 'es-ES';
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+      }
+    } else {
+      // 【安卓/其他设备通道】：调用网易有道词典云端发音
+      let audioUrl = "https://dict.youdao.com/dictvoice?audio=" + encodeURIComponent(cleanText) + "&le=es";
+      let audio = new Audio(audioUrl);
+      audio.play().catch(function(error) {
+          console.log("云端播放失败，尝试本地兜底...", error);
+          if ('speechSynthesis' in window) {
+              window.speechSynthesis.cancel();
+              let utterance = new SpeechSynthesisUtterance(cleanText + ".");
+              utterance.lang = 'es-ES';
+              utterance.rate = 0.9;
+              window.speechSynthesis.speak(utterance);
+          }
+      });
+    }
   }
 
   /* --- TAB 切换功能 --- */
@@ -1185,7 +1195,7 @@
     });
   }
 
-  /* --- 页面初始化与数据渲染 --- */
+  /* --- 数据加载逻辑 --- */
   const numbersEs = [
     "cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez",
     "once","doce","trece","catorce","quince","dieciséis","diecisiete","dieciocho","diecinueve","veinte",
