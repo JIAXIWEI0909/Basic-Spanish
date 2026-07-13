@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Spanish Learning: Saludos, Pronunciación & Rutina</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFF7ED;        
+    --ink: #333;          
+    --accent: #FFA94D;    
+    --accent2: #FFD8A8;   
+    --card: #fff;         
+    --green: #2e7d32;     
+    --hover: #FFF0D4;     
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Nunito', 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    padding-bottom: 60px;
+  }
+
+  header {
+    padding: 25px;
+    text-align: center;
+    background: #fff0da;
+    border-bottom: 4px solid var(--accent);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  h1 {
+    margin: 0;
+    font-weight: 900;
+    color: #e65100;
+    font-size: clamp(24px, 5vw, 36px);
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    color: #e65100;
+    border-left: 5px solid var(--accent);
+    padding-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+  
+  h3 {
+    color: #1565C0;
+    border-bottom: 1px solid #E3F2FD;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  h4 {
+    color: #2e7d32;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* --- Navigation Tabs --- */
+  .nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+
+  .tab-btn {
+    border: 2px solid var(--accent);
+    padding: 10px 25px;
+    background: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 800;
+    font-family: inherit;
+    transition: all 0.2s;
+    color: var(--ink);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-size: 1.05em;
+  }
+
+  .tab-btn:hover { background: var(--hover); transform: translateY(-2px); }
+  
+  .tab-btn.active {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 169, 77, 0.4);
+    border-color: var(--accent);
+  }
+
+  /* Section Control */
+  .section-content { display: none; animation: fadeIn 0.3s ease-out; }
+  .section-content.active { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* --- Cards General --- */
+  .card {
+    background: var(--card);
+    border: 1px solid #ffe0b2;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    margin-bottom: 20px;
+  }
+
+  /* --- Vocab Grid --- */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 15px;
+  }
+
+  .vocab-card {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vocab-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 10px rgba(255, 169, 77, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .emoji { font-size: 34px; margin-bottom: 8px; }
+  .es-text { font-size: 16px; font-weight: 900; color: #333; margin-bottom: 4px; }
+  .en-text { font-size: 13px; color: #666; font-weight: bold; margin-bottom: 2px; }
+  .cn-text { font-size: 13px; color: #888; font-style: italic; }
+  .sub-note { font-size: 0.85em; color: #777; font-weight: normal; display: block; margin-top: 3px; }
+
+  /* --- Numbers & Routine Specific Styles --- */
+  .number-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+    gap: 12px;
+  }
+
+  .num-card {
+    background: #fff;
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 12px 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+  }
+
+  .num-card:hover {
+    background: var(--accent2);
+    transform: scale(1.08);
+  }
+
+  .num-digit {
+    font-size: 24px;
+    font-weight: 900;
+    color: #e65100;
+    display: block;
+  }
+
+  .num-word {
+    font-size: 14px;
+    font-weight: 700;
+    color: #555;
+    margin-top: 5px;
+  }
+
+  .rule-box {
+    background: #FFF3E0;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #FF9800;
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .rule-box p { margin: 10px 0; font-weight: 600; cursor: pointer; padding: 5px; border-radius: 8px; transition: background 0.2s; }
+  .rule-box p:hover { background: #ffe0b2; }
+
+  .grammar-note {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #444;
+    border: 1px dashed #FF9800;
+  }
+
+  .grammar-note ul { margin: 8px 0 0 0; padding-left: 20px; }
+  .grammar-note li { margin-bottom: 8px; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🇪🇸 Aprender Español</h1>
+  <p>Saludos, Pronunciación, Números & Rutina</p>
+</header>
+
+<div class="container">
+  
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab('repaso')">1. Saludos</button>
+    <button class="tab-btn" onclick="switchTab('pronunciacion')">2. Pronunciación</button>
+    <button class="tab-btn" onclick="switchTab('numeros')">3. Números</button>
+    <button class="tab-btn" onclick="switchTab('rutina')">4. Vocabulario</button>
+  </div>
+
+  <!-- ==========================================
+       SECTION 1: SALUDOS 
+       ========================================== -->
+  <div id="repaso" class="section-content active">
+    
+    <div class="card">
+      <h2>👋 Saludos Comunes (Greetings)</h2>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('Hola')">
+          <span class="emoji">👋</span>
+          <span class="es-text">Hola</span>
+          <span class="en-text">Hello</span>
+          <span class="cn-text">你好</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Buenos días')">
+          <span class="emoji">🌅</span>
+          <span class="es-text">Buenos días</span>
+          <span class="en-text">Good morning</span>
+          <span class="cn-text">早上好</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Buenas tardes')">
+          <span class="emoji">🌇</span>
+          <span class="es-text">Buenas tardes</span>
+          <span class="en-text">Good afternoon</span>
+          <span class="cn-text">下午好</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Buenas noches')">
+          <span class="emoji">🌃</span>
+          <span class="es-text">Buenas noches</span>
+          <span class="en-text">Good evening</span>
+          <span class="cn-text">晚上好/晚安</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🤝 Presentaciones (Self-Introduction)</h2>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('Me llamo')">
+          <span class="emoji">🗣️</span>
+          <span class="es-text">Me llamo ...</span>
+          <span class="en-text">My name is ...</span>
+          <span class="cn-text">我叫...</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Soy')">
+          <span class="emoji">🙋</span>
+          <span class="es-text">Soy ...</span>
+          <span class="en-text">I am ...</span>
+          <span class="cn-text">我是...</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Mucho gusto')">
+          <span class="emoji">🤝</span>
+          <span class="es-text">Mucho gusto</span>
+          <span class="en-text">Nice to meet you</span>
+          <span class="cn-text">很高兴认识你</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Encantado')">
+          <span class="emoji">✨</span>
+          <span class="es-text">Encantado(a)</span>
+          <span class="en-text">Nice to meet you</span>
+          <span class="cn-text">很高兴认识你</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🎭 ¿Cómo estás? (How are you?)</h2>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('¿Cómo estás?')">
+          <span class="emoji">🤔</span>
+          <span class="es-text">¿Cómo estás?</span>
+          <span class="en-text">How are you?</span>
+          <span class="cn-text">你好吗？(非正式)</span>
+        </div>
+        <div class="vocab-card" onclick="speak('¿Cómo está?')">
+          <span class="emoji">👔</span>
+          <span class="es-text">¿Cómo está?</span>
+          <span class="en-text">How are you?</span>
+          <span class="cn-text">您好吗？(正式)</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Estoy bien')">
+          <span class="emoji">😊</span>
+          <span class="es-text">Estoy bien</span>
+          <span class="en-text">I am fine</span>
+          <span class="cn-text">我很好</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Estoy feliz')">
+          <span class="emoji">😄</span>
+          <span class="es-text">Estoy feliz</span>
+          <span class="en-text">I am happy</span>
+          <span class="cn-text">我很开心</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 2: PRONUNCIACIÓN
+       ========================================== -->
+  <div id="pronunciacion" class="section-content">
+    
+    <!-- 1. VOCALES -->
+    <div class="card">
+      <h2>🅰️ Vocales (Vowels)</h2>
+      <p style="color:#666; margin-bottom:15px;">强元音: a, e, o | 弱元音: i, u</p>
+      
+      <h3>Diptongos (二重元音)</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('ciudad')">
+          <span class="emoji">🏙️</span>
+          <span class="es-text">Ciudad</span>
+          <span class="en-text">City <span class="sub-note">(iu)</span></span>
+          <span class="cn-text">城市</span>
+        </div>
+        <div class="vocab-card" onclick="speak('ruido')">
+          <span class="emoji">🔊</span>
+          <span class="es-text">Ruido</span>
+          <span class="en-text">Noise <span class="sub-note">(ui)</span></span>
+          <span class="cn-text">噪音</span>
+        </div>
+        <div class="vocab-card" onclick="speak('piano')">
+          <span class="emoji">🎹</span>
+          <span class="es-text">Piano</span>
+          <span class="en-text">Piano <span class="sub-note">(ia)</span></span>
+          <span class="cn-text">钢琴</span>
+        </div>
+        <div class="vocab-card" onclick="speak('aire')">
+          <span class="emoji">💨</span>
+          <span class="es-text">Aire</span>
+          <span class="en-text">Air <span class="sub-note">(ai)</span></span>
+          <span class="cn-text">空气</span>
+        </div>
+        <div class="vocab-card" onclick="speak('pie')">
+          <span class="emoji">🦶</span>
+          <span class="es-text">Pie</span>
+          <span class="en-text">Foot <span class="sub-note">(ie)</span></span>
+          <span class="cn-text">脚</span>
+        </div>
+        <div class="vocab-card" onclick="speak('peine')">
+          <span class="emoji">梳</span>
+          <span class="es-text">Peine</span>
+          <span class="en-text">Comb <span class="sub-note">(ei)</span></span>
+          <span class="cn-text">梳子</span>
+        </div>
+        <div class="vocab-card" onclick="speak('labio')">
+          <span class="emoji">👄</span>
+          <span class="es-text">Labio</span>
+          <span class="en-text">Lip <span class="sub-note">(io)</span></span>
+          <span class="cn-text">嘴唇</span>
+        </div>
+        <div class="vocab-card" onclick="speak('hoy')">
+          <span class="emoji">📅</span>
+          <span class="es-text">Hoy</span>
+          <span class="en-text">Today <span class="sub-note">(oi/oy)</span></span>
+          <span class="cn-text">今天</span>
+        </div>
+        <div class="vocab-card" onclick="speak('auto')">
+          <span class="emoji">🚗</span>
+          <span class="es-text">Auto</span>
+          <span class="en-text">Car <span class="sub-note">(au)</span></span>
+          <span class="cn-text">汽车</span>
+        </div>
+        <div class="vocab-card" onclick="speak('agua')">
+          <span class="emoji">💧</span>
+          <span class="es-text">Agua</span>
+          <span class="en-text">Water <span class="sub-note">(ua)</span></span>
+          <span class="cn-text">水</span>
+        </div>
+        <div class="vocab-card" onclick="speak('euro')">
+          <span class="emoji">💶</span>
+          <span class="es-text">Euro</span>
+          <span class="en-text">Euro <span class="sub-note">(eu)</span></span>
+          <span class="cn-text">欧元</span>
+        </div>
+        <div class="vocab-card" onclick="speak('abuelo')">
+          <span class="emoji">👴</span>
+          <span class="es-text">Abuelo</span>
+          <span class="en-text">Grandpa <span class="sub-note">(ue)</span></span>
+          <span class="cn-text">爷爷</span>
+        </div>
+        <div class="vocab-card" onclick="speak('cuota')">
+          <span class="emoji">📊</span>
+          <span class="es-text">Cuota</span>
+          <span class="en-text">Quota <span class="sub-note">(uo)</span></span>
+          <span class="cn-text">份额</span>
+        </div>
+      </div>
+
+      <h3>Triptongos (三重元音)</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('Uruguay')">
+          <span class="emoji">🇺🇾</span>
+          <span class="es-text">Uruguay</span>
+          <span class="en-text">Uruguay <span class="sub-note">(uay)</span></span>
+          <span class="cn-text">乌拉圭</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Paraguay')">
+          <span class="emoji">🇵🇾</span>
+          <span class="es-text">Paraguay</span>
+          <span class="en-text">Paraguay <span class="sub-note">(uay)</span></span>
+          <span class="cn-text">巴拉圭</span>
+        </div>
+        <div class="vocab-card" onclick="speak('buey')">
+          <span class="emoji">🐂</span>
+          <span class="es-text">Buey</span>
+          <span class="en-text">Ox <span class="sub-note">(uey)</span></span>
+          <span class="cn-text">牛</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. CONSONANTES 1 -->
+    <div class="card">
+      <h2>1️⃣ Consonantes (1ª Clase: Único Sonido)</h2>
+      <p style="color:#666; margin-bottom:15px;">只有一种读法的字母: m, t, ch, ñ, ll, f, h, k</p>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('mamá')">
+          <span class="emoji">👩</span>
+          <span class="es-text">Mamá</span>
+          <span class="en-text">Mom <span class="sub-note">(m)</span></span>
+          <span class="cn-text">妈妈</span>
+        </div>
+        <div class="vocab-card" onclick="speak('tomate')">
+          <span class="emoji">🍅</span>
+          <span class="es-text">Tomate</span>
+          <span class="en-text">Tomato <span class="sub-note">(t)</span></span>
+          <span class="cn-text">番茄</span>
+        </div>
+        <div class="vocab-card" onclick="speak('chico')">
+          <span class="emoji">👦</span>
+          <span class="es-text">Chico</span>
+          <span class="en-text">Boy <span class="sub-note">(ch)</span></span>
+          <span class="cn-text">男孩</span>
+        </div>
+        <div class="vocab-card" onclick="speak('niña')">
+          <span class="emoji">👧</span>
+          <span class="es-text">Niña</span>
+          <span class="en-text">Girl <span class="sub-note">(ñ)</span></span>
+          <span class="cn-text">女孩</span>
+        </div>
+        <div class="vocab-card" onclick="speak('llave')">
+          <span class="emoji">🔑</span>
+          <span class="es-text">Llave</span>
+          <span class="en-text">Key <span class="sub-note">(ll)</span></span>
+          <span class="cn-text">钥匙</span>
+        </div>
+        <div class="vocab-card" onclick="speak('foto')">
+          <span class="emoji">📷</span>
+          <span class="es-text">Foto</span>
+          <span class="en-text">Photo <span class="sub-note">(f)</span></span>
+          <span class="cn-text">照片</span>
+        </div>
+        <div class="vocab-card" onclick="speak('hola')">
+          <span class="emoji">👋</span>
+          <span class="es-text">Hola</span>
+          <span class="en-text">Hello <span class="sub-note">(h 不发音)</span></span>
+          <span class="cn-text">你好</span>
+        </div>
+        <div class="vocab-card" onclick="speak('kilo')">
+          <span class="emoji">⚖️</span>
+          <span class="es-text">Kilo</span>
+          <span class="en-text">Kilo <span class="sub-note">(k 外来词)</span></span>
+          <span class="cn-text">公斤</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. CONSONANTES 2 -->
+    <div class="card">
+      <h2>2️⃣ Consonantes (2ª Clase: Diferentes Sonidos)</h2>
+      <p style="color:#666; margin-bottom:15px;">位置不同，发音有变化 (L, S, P, N, D, B/V, W, R, Y, X)</p>
+
+      <h4>L & S</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('luna')">
+          <span class="emoji">🌙</span>
+          <span class="es-text">Luna</span>
+          <span class="en-text">Moon <span class="sub-note">(L 词首)</span></span>
+          <span class="cn-text">月亮</span>
+        </div>
+        <div class="vocab-card" onclick="speak('león')">
+          <span class="emoji">🦁</span>
+          <span class="es-text">León</span>
+          <span class="en-text">Lion <span class="sub-note">(L 词首)</span></span>
+          <span class="cn-text">狮子</span>
+        </div>
+        <div class="vocab-card" onclick="speak('sol')">
+          <span class="emoji">☀️</span>
+          <span class="es-text">Sol</span>
+          <span class="en-text">Sun <span class="sub-note">(L 词尾)</span></span>
+          <span class="cn-text">太阳</span>
+        </div>
+        <div class="vocab-card" onclick="speak('azul')">
+          <span class="emoji">🟦</span>
+          <span class="es-text">Azul</span>
+          <span class="en-text">Blue <span class="sub-note">(L 词尾)</span></span>
+          <span class="cn-text">蓝色</span>
+        </div>
+        <div class="vocab-card" onclick="speak('silla')">
+          <span class="emoji">🪑</span>
+          <span class="es-text">Silla</span>
+          <span class="en-text">Chair <span class="sub-note">(S 正常)</span></span>
+          <span class="cn-text">椅子</span>
+        </div>
+        <div class="vocab-card" onclick="speak('sopa')">
+          <span class="emoji">🥣</span>
+          <span class="es-text">Sopa</span>
+          <span class="en-text">Soup <span class="sub-note">(S 正常)</span></span>
+          <span class="cn-text">汤</span>
+        </div>
+        <div class="vocab-card" onclick="speak('isla')">
+          <span class="emoji">🏝️</span>
+          <span class="es-text">Isla</span>
+          <span class="en-text">Island <span class="sub-note">(S 浊化)</span></span>
+          <span class="cn-text">岛屿</span>
+        </div>
+        <div class="vocab-card" onclick="speak('mismo')">
+          <span class="emoji">🪞</span>
+          <span class="es-text">Mismo</span>
+          <span class="en-text">Same <span class="sub-note">(S 浊化)</span></span>
+          <span class="cn-text">相同的</span>
+        </div>
+      </div>
+
+      <h4>P & N</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('papá')">
+          <span class="emoji">👨</span>
+          <span class="es-text">Papá</span>
+          <span class="en-text">Dad <span class="sub-note">(P 正常)</span></span>
+          <span class="cn-text">爸爸</span>
+        </div>
+        <div class="vocab-card" onclick="speak('pato')">
+          <span class="emoji">🦆</span>
+          <span class="es-text">Pato</span>
+          <span class="en-text">Duck <span class="sub-note">(P 正常)</span></span>
+          <span class="cn-text">鸭子</span>
+        </div>
+        <div class="vocab-card" onclick="speak('psicólogo')">
+          <span class="emoji">🧠</span>
+          <span class="es-text">Psicólogo</span>
+          <span class="en-text">Psychologist <span class="sub-note">(P 不发音)</span></span>
+          <span class="cn-text">心理学家</span>
+        </div>
+        <div class="vocab-card" onclick="speak('nube')">
+          <span class="emoji">☁️</span>
+          <span class="es-text">Nube</span>
+          <span class="en-text">Cloud <span class="sub-note">(N 词首)</span></span>
+          <span class="cn-text">云</span>
+        </div>
+        <div class="vocab-card" onclick="speak('nido')">
+          <span class="emoji">🪹</span>
+          <span class="es-text">Nido</span>
+          <span class="en-text">Nest <span class="sub-note">(N 词首)</span></span>
+          <span class="cn-text">鸟巢</span>
+        </div>
+        <div class="vocab-card" onclick="speak('pan')">
+          <span class="emoji">🥖</span>
+          <span class="es-text">Pan</span>
+          <span class="en-text">Bread <span class="sub-note">(N 词尾)</span></span>
+          <span class="cn-text">面包</span>
+        </div>
+        <div class="vocab-card" onclick="speak('tren')">
+          <span class="emoji">🚂</span>
+          <span class="es-text">Tren</span>
+          <span class="en-text">Train <span class="sub-note">(N 词尾)</span></span>
+          <span class="cn-text">火车</span>
+        </div>
+      </div>
+
+      <h4>D (塞音 vs 擦音 vs 词尾)</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('dos')">
+          <span class="emoji">2️⃣</span>
+          <span class="es-text">Dos</span>
+          <span class="en-text">Two <span class="sub-note">(D 塞音)</span></span>
+          <span class="cn-text">二</span>
+        </div>
+        <div class="vocab-card" onclick="speak('diente')">
+          <span class="emoji">🦷</span>
+          <span class="es-text">Diente</span>
+          <span class="en-text">Tooth <span class="sub-note">(D 塞音)</span></span>
+          <span class="cn-text">牙齿</span>
+        </div>
+        <div class="vocab-card" onclick="speak('dedo')">
+          <span class="emoji">👆</span>
+          <span class="es-text">Dedo</span>
+          <span class="en-text">Finger <span class="sub-note">(D 塞音+擦音)</span></span>
+          <span class="cn-text">手指</span>
+        </div>
+        <div class="vocab-card" onclick="speak('salud')">
+          <span class="emoji">🏥</span>
+          <span class="es-text">Salud</span>
+          <span class="en-text">Health <span class="sub-note">(D 词尾)</span></span>
+          <span class="cn-text">健康</span>
+        </div>
+        <div class="vocab-card" onclick="speak('ciudad')">
+          <span class="emoji">🏙️</span>
+          <span class="es-text">Ciudad</span>
+          <span class="en-text">City <span class="sub-note">(D 词尾)</span></span>
+          <span class="cn-text">城市</span>
+        </div>
+      </div>
+
+      <h4>B / V (塞音 vs 擦音)</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('barco')">
+          <span class="emoji">⛵</span>
+          <span class="es-text">Barco</span>
+          <span class="en-text">Boat <span class="sub-note">(B 塞音)</span></span>
+          <span class="cn-text">小船</span>
+        </div>
+        <div class="vocab-card" onclick="speak('vaso')">
+          <span class="emoji">🥛</span>
+          <span class="es-text">Vaso</span>
+          <span class="en-text">Glass <span class="sub-note">(V 塞音)</span></span>
+          <span class="cn-text">玻璃杯</span>
+        </div>
+        <div class="vocab-card" onclick="speak('bebé')">
+          <span class="emoji">🍼</span>
+          <span class="es-text">Bebé</span>
+          <span class="en-text">Baby <span class="sub-note">(B 塞音)</span></span>
+          <span class="cn-text">婴儿</span>
+        </div>
+        <div class="vocab-card" onclick="speak('uva')">
+          <span class="emoji">🍇</span>
+          <span class="es-text">Uva</span>
+          <span class="en-text">Grape <span class="sub-note">(V 擦音)</span></span>
+          <span class="cn-text">葡萄</span>
+        </div>
+        <div class="vocab-card" onclick="speak('nube')">
+          <span class="emoji">☁️</span>
+          <span class="es-text">Nube</span>
+          <span class="en-text">Cloud <span class="sub-note">(B 擦音)</span></span>
+          <span class="cn-text">云</span>
+        </div>
+        <div class="vocab-card" onclick="speak('avión')">
+          <span class="emoji">✈️</span>
+          <span class="es-text">Avión</span>
+          <span class="en-text">Airplane <span class="sub-note">(V 擦音)</span></span>
+          <span class="cn-text">飞机</span>
+        </div>
+      </div>
+
+      <h4>R (单颤 vs 多击) & W (外来词)</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('pera')">
+          <span class="emoji">🍐</span>
+          <span class="es-text">Pera</span>
+          <span class="en-text">Pear <span class="sub-note">(R 单颤)</span></span>
+          <span class="cn-text">梨</span>
+        </div>
+        <div class="vocab-card" onclick="speak('mar')">
+          <span class="emoji">🌊</span>
+          <span class="es-text">Mar</span>
+          <span class="en-text">Sea <span class="sub-note">(R 单颤)</span></span>
+          <span class="cn-text">大海</span>
+        </div>
+        <div class="vocab-card" onclick="speak('perro')">
+          <span class="emoji">🐶</span>
+          <span class="es-text">Perro</span>
+          <span class="en-text">Dog <span class="sub-note">(RR 多击)</span></span>
+          <span class="cn-text">狗</span>
+        </div>
+        <div class="vocab-card" onclick="speak('rosa')">
+          <span class="emoji">🌹</span>
+          <span class="es-text">Rosa</span>
+          <span class="en-text">Rose <span class="sub-note">(R词首 多击)</span></span>
+          <span class="cn-text">玫瑰</span>
+        </div>
+        <div class="vocab-card" onclick="speak('kiwi')">
+          <span class="emoji">🥝</span>
+          <span class="es-text">Kiwi</span>
+          <span class="en-text">Kiwi <span class="sub-note">(W 英系)</span></span>
+          <span class="cn-text">猕猴桃</span>
+        </div>
+      </div>
+
+      <h4>Y (辅音 vs 元音) & X (三种发音)</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('yo')">
+          <span class="emoji">🙋</span>
+          <span class="es-text">Yo</span>
+          <span class="en-text">I <span class="sub-note">(Y 辅音)</span></span>
+          <span class="cn-text">我</span>
+        </div>
+        <div class="vocab-card" onclick="speak('yema')">
+          <span class="emoji">🥚</span>
+          <span class="es-text">Yema</span>
+          <span class="en-text">Yolk <span class="sub-note">(Y 辅音)</span></span>
+          <span class="cn-text">蛋黄</span>
+        </div>
+        <div class="vocab-card" onclick="speak('rey')">
+          <span class="emoji">👑</span>
+          <span class="es-text">Rey</span>
+          <span class="en-text">King <span class="sub-note">(Y 元音)</span></span>
+          <span class="cn-text">国王</span>
+        </div>
+        <div class="vocab-card" onclick="speak('texto')">
+          <span class="emoji">📄</span>
+          <span class="es-text">Texto</span>
+          <span class="en-text">Text <span class="sub-note">(X = ks)</span></span>
+          <span class="cn-text">文本</span>
+        </div>
+        <div class="vocab-card" onclick="speak('taxi')">
+          <span class="emoji">🚕</span>
+          <span class="es-text">Taxi</span>
+          <span class="en-text">Taxi <span class="sub-note">(X 元音间)</span></span>
+          <span class="cn-text">出租车</span>
+        </div>
+        <div class="vocab-card" onclick="speak('México')">
+          <span class="emoji">🇲🇽</span>
+          <span class="es-text">México</span>
+          <span class="en-text">Mexico <span class="sub-note">(X = j音)</span></span>
+          <span class="cn-text">墨西哥</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. CONSONANTES 3 -->
+    <div class="card">
+      <h2>3️⃣ Consonantes (3ª Clase: Combinaciones)</h2>
+      <p style="color:#666; margin-bottom:15px;">特殊拼写组合 (C/Q, Z/C, G, J/G)</p>
+
+      <h4>/K/ (ca, que, qui, co, cu)</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('casa')">
+          <span class="emoji">🏠</span>
+          <span class="es-text">Casa</span>
+          <span class="en-text">House <span class="sub-note">(ca)</span></span>
+          <span class="cn-text">家</span>
+        </div>
+        <div class="vocab-card" onclick="speak('queso')">
+          <span class="emoji">🧀</span>
+          <span class="es-text">Queso</span>
+          <span class="en-text">Cheese <span class="sub-note">(que)</span></span>
+          <span class="cn-text">奶酪</span>
+        </div>
+        <div class="vocab-card" onclick="speak('quince')">
+          <span class="emoji">1️⃣5️⃣</span>
+          <span class="es-text">Quince</span>
+          <span class="en-text">Fifteen <span class="sub-note">(qui)</span></span>
+          <span class="cn-text">十五</span>
+        </div>
+        <div class="vocab-card" onclick="speak('color')">
+          <span class="emoji">🎨</span>
+          <span class="es-text">Color</span>
+          <span class="en-text">Color <span class="sub-note">(co)</span></span>
+          <span class="cn-text">颜色</span>
+        </div>
+        <div class="vocab-card" onclick="speak('cuna')">
+          <span class="emoji">🛏️</span>
+          <span class="es-text">Cuna</span>
+          <span class="en-text">Crib <span class="sub-note">(cu)</span></span>
+          <span class="cn-text">摇篮</span>
+        </div>
+      </div>
+
+      <h4>/S/ or /TH/ (za, ce, ci, zo, zu)</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('zapato')">
+          <span class="emoji">👞</span>
+          <span class="es-text">Zapato</span>
+          <span class="en-text">Shoe <span class="sub-note">(za)</span></span>
+          <span class="cn-text">鞋</span>
+        </div>
+        <div class="vocab-card" onclick="speak('cena')">
+          <span class="emoji">🍝</span>
+          <span class="es-text">Cena</span>
+          <span class="en-text">Dinner <span class="sub-note">(ce)</span></span>
+          <span class="cn-text">晚餐</span>
+        </div>
+        <div class="vocab-card" onclick="speak('cine')">
+          <span class="emoji">🎬</span>
+          <span class="es-text">Cine</span>
+          <span class="en-text">Cinema <span class="sub-note">(ci)</span></span>
+          <span class="cn-text">电影院</span>
+        </div>
+        <div class="vocab-card" onclick="speak('zorro')">
+          <span class="emoji">🦊</span>
+          <span class="es-text">Zorro</span>
+          <span class="en-text">Fox <span class="sub-note">(zo)</span></span>
+          <span class="cn-text">狐狸</span>
+        </div>
+        <div class="vocab-card" onclick="speak('zumo')">
+          <span class="emoji">🧃</span>
+          <span class="es-text">Zumo</span>
+          <span class="en-text">Juice <span class="sub-note">(zu)</span></span>
+          <span class="cn-text">果汁</span>
+        </div>
+      </div>
+
+      <h4>/G/ 浊音 (ga, gue, gui, go, gu, güe, güi)</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('gato')">
+          <span class="emoji">🐱</span>
+          <span class="es-text">Gato</span>
+          <span class="en-text">Cat <span class="sub-note">(ga)</span></span>
+          <span class="cn-text">猫</span>
+        </div>
+        <div class="vocab-card" onclick="speak('juguete')">
+          <span class="emoji">🧸</span>
+          <span class="es-text">Juguete</span>
+          <span class="en-text">Toy <span class="sub-note">(gue - u不发音)</span></span>
+          <span class="cn-text">玩具</span>
+        </div>
+        <div class="vocab-card" onclick="speak('guitarra')">
+          <span class="emoji">🎸</span>
+          <span class="es-text">Guitarra</span>
+          <span class="en-text">Guitar <span class="sub-note">(gui - u不发音)</span></span>
+          <span class="cn-text">吉他</span>
+        </div>
+        <div class="vocab-card" onclick="speak('gota')">
+          <span class="emoji">💧</span>
+          <span class="es-text">Gota</span>
+          <span class="en-text">Drop <span class="sub-note">(go)</span></span>
+          <span class="cn-text">水滴</span>
+        </div>
+        <div class="vocab-card" onclick="speak('guapa')">
+          <span class="emoji">💃</span>
+          <span class="es-text">Guapa</span>
+          <span class="en-text">Pretty <span class="sub-note">(gu)</span></span>
+          <span class="cn-text">漂亮</span>
+        </div>
+        <div class="vocab-card" onclick="speak('pingüino')">
+          <span class="emoji">🐧</span>
+          <span class="es-text">Pingüino</span>
+          <span class="en-text">Penguin <span class="sub-note">(güi - u发音)</span></span>
+          <span class="cn-text">企鹅</span>
+        </div>
+      </div>
+
+      <h4>/J/ 喉音 (ja, je/ge, ji/gi, jo, ju)</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('jabón')">
+          <span class="emoji">🧼</span>
+          <span class="es-text">Jabón</span>
+          <span class="en-text">Soap <span class="sub-note">(ja)</span></span>
+          <span class="cn-text">肥皂</span>
+        </div>
+        <div class="vocab-card" onclick="speak('jefe')">
+          <span class="emoji">👔</span>
+          <span class="es-text">Jefe</span>
+          <span class="en-text">Boss <span class="sub-note">(je)</span></span>
+          <span class="cn-text">老板</span>
+        </div>
+        <div class="vocab-card" onclick="speak('gente')">
+          <span class="emoji">👥</span>
+          <span class="es-text">Gente</span>
+          <span class="en-text">People <span class="sub-note">(ge)</span></span>
+          <span class="cn-text">人们</span>
+        </div>
+        <div class="vocab-card" onclick="speak('jirafa')">
+          <span class="emoji">🦒</span>
+          <span class="es-text">Jirafa</span>
+          <span class="en-text">Giraffe <span class="sub-note">(ji)</span></span>
+          <span class="cn-text">长颈鹿</span>
+        </div>
+        <div class="vocab-card" onclick="speak('gigante')">
+          <span class="emoji">🧍‍♂️</span>
+          <span class="es-text">Gigante</span>
+          <span class="en-text">Giant <span class="sub-note">(gi)</span></span>
+          <span class="cn-text">巨人</span>
+        </div>
+        <div class="vocab-card" onclick="speak('joya')">
+          <span class="emoji">💎</span>
+          <span class="es-text">Joya</span>
+          <span class="en-text">Jewel <span class="sub-note">(jo)</span></span>
+          <span class="cn-text">珠宝</span>
+        </div>
+        <div class="vocab-card" onclick="speak('jugo')">
+          <span class="emoji">🧃</span>
+          <span class="es-text">Jugo</span>
+          <span class="en-text">Juice <span class="sub-note">(ju)</span></span>
+          <span class="cn-text">果汁</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. GRUPOS CONSONÁNTICOS -->
+    <div class="card">
+      <h2>🔗 Grupos Consonánticos (Clusters)</h2>
+      <p style="color:#666; margin-bottom:15px;">辅音连缀 (两个辅音连读)</p>
+      
+      <h4>L combinations</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('blusa')">
+          <span class="emoji">👚</span>
+          <span class="es-text">Blusa</span>
+          <span class="en-text">Blouse <span class="sub-note">(bl)</span></span>
+          <span class="cn-text">衬衫</span>
+        </div>
+        <div class="vocab-card" onclick="speak('plato')">
+          <span class="emoji">🍽️</span>
+          <span class="es-text">Plato</span>
+          <span class="en-text">Plate <span class="sub-note">(pl)</span></span>
+          <span class="cn-text">盘子</span>
+        </div>
+        <div class="vocab-card" onclick="speak('clase')">
+          <span class="emoji">🏫</span>
+          <span class="es-text">Clase</span>
+          <span class="en-text">Class <span class="sub-note">(cl)</span></span>
+          <span class="cn-text">课程</span>
+        </div>
+        <div class="vocab-card" onclick="speak('flor')">
+          <span class="emoji">🌸</span>
+          <span class="es-text">Flor</span>
+          <span class="en-text">Flower <span class="sub-note">(fl)</span></span>
+          <span class="cn-text">花朵</span>
+        </div>
+        <div class="vocab-card" onclick="speak('globo')">
+          <span class="emoji">🎈</span>
+          <span class="es-text">Globo</span>
+          <span class="en-text">Balloon / Globe <span class="sub-note">(gl)</span></span>
+          <span class="cn-text">气球 / 地球仪</span>
+        </div>
+        <div class="vocab-card" onclick="speak('atlas')">
+          <span class="emoji">🗺️</span>
+          <span class="es-text">Atlas</span>
+          <span class="en-text">Atlas <span class="sub-note">(tl)</span></span>
+          <span class="cn-text">地图册</span>
+        </div>
+      </div>
+
+      <h4>R combinations</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('primo')">
+          <span class="emoji">👦</span>
+          <span class="es-text">Primo</span>
+          <span class="en-text">Cousin <span class="sub-note">(pr)</span></span>
+          <span class="cn-text">表兄弟</span>
+        </div>
+        <div class="vocab-card" onclick="speak('brazo')">
+          <span class="emoji">💪</span>
+          <span class="es-text">Brazo</span>
+          <span class="en-text">Arm <span class="sub-note">(br)</span></span>
+          <span class="cn-text">手臂</span>
+        </div>
+        <div class="vocab-card" onclick="speak('crema')">
+          <span class="emoji">🧴</span>
+          <span class="es-text">Crema</span>
+          <span class="en-text">Cream <span class="sub-note">(cr)</span></span>
+          <span class="cn-text">奶油/霜</span>
+        </div>
+        <div class="vocab-card" onclick="speak('fresa')">
+          <span class="emoji">🍓</span>
+          <span class="es-text">Fresa</span>
+          <span class="en-text">Strawberry <span class="sub-note">(fr)</span></span>
+          <span class="cn-text">草莓</span>
+        </div>
+        <div class="vocab-card" onclick="speak('grande')">
+          <span class="emoji">🐘</span>
+          <span class="es-text">Grande</span>
+          <span class="en-text">Big <span class="sub-note">(gr)</span></span>
+          <span class="cn-text">大的</span>
+        </div>
+        <div class="vocab-card" onclick="speak('tren')">
+          <span class="emoji">🚂</span>
+          <span class="es-text">Tren</span>
+          <span class="en-text">Train <span class="sub-note">(tr)</span></span>
+          <span class="cn-text">火车</span>
+        </div>
+        <div class="vocab-card" onclick="speak('dragón')">
+          <span class="emoji">🐉</span>
+          <span class="es-text">Dragón</span>
+          <span class="en-text">Dragon <span class="sub-note">(dr)</span></span>
+          <span class="cn-text">龙</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==========================================
+       SECTION 3: NÚMEROS (Original code added)
+       ========================================== -->
+  <div id="numeros" class="section-content">
+    <div class="card">
+      <h2>🔢 Los Números (Click to Listen)</h2>
+      <div class="number-grid" id="numberGrid"></div>
+    </div>
+    <div class="card">
+      <h2>🎂 La Edad (Age)</h2>
+      <div class="rule-box" style="text-align: center; font-size: 1.2em;">
+        <p onclick="speak('¿Cuántos años tienes?')" style="cursor: pointer; padding-bottom: 10px; border-bottom: 1px dashed #FFD8A8;">🗣️ <strong>¿Cuántos años tienes?</strong> (How old are you?)</p>
+        <p onclick="speak('Tengo catorce años.')" style="cursor: pointer;">🗣️ Para responder (To answer):<br>
+        <strong>Tengo</strong> [número] <strong>años.</strong><br>
+        <span style="font-size: 0.8em; color: #666;">(I am ... years old. / Literally: I have ... years.)</span></p>
+        <p style="color: #e65100; font-weight: bold;">Ejemplo: Tengo 14 años. (I am 14 years old.)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 4: VOCABULARIO (Original code added - Yo only)
+       ========================================== -->
+  <div id="rutina" class="section-content">
+    <div class="card">
+      <h2>📅 Mis Actividades (All Vocabulary)</h2>
+      <p style="color:#666; margin-bottom:15px; font-style:italic;">Combined list of daily routine & study verbs.</p>
+
+      <div class="grammar-note" style="margin-bottom: 25px;">
+        <strong>💡 Verb Conjugation (Different Pronouns = Different Verb Forms)</strong><br>
+        In Spanish, verbs change their endings depending on <em>who</em> is doing the action. For example, "I work" is <em>trabaj<strong>o</strong></em>, "You work" is <em>trabaj<strong>as</strong></em>, and "He/She works" is <em>trabaj<strong>a</strong></em>. Notice how the end of the word changes to match the pronoun!
+      </div>
+
+      <div class="grammar-note" style="margin-bottom: 25px; border-color: #4CAF50; background-color: #E8F5E9;">
+        <h3 style="color: #2E7D32; margin-top: 0; margin-bottom: 10px;">📚 The 6 Subject Pronouns & Present Indicative Conjugation</h3>
+        <p style="margin-top: 0; color: #333;">
+          In Spanish, there are <strong>6 main categories of subject pronouns</strong>. In the present indicative tense (<em>Presente de Indicativo</em>), verbs change their forms (conjugate) into 6 different ways to match these pronouns.
+        </p>
+        <p style="color: #333;">
+          Here is an example using two essential verbs, <strong>Ser</strong> and <strong>Estar</strong>. Based on your grammar rules, both mean "to be", but they have different uses (<em>Ser</em> is for permanent attributes and origins, while <em>Estar</em> is for temporary states and locations):
+        </p>
+        
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; margin-top: 10px; background: white; border-radius: 8px; overflow: hidden; font-size: 16px; text-align: left; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <thead>
+              <tr style="background: #4CAF50; color: white;">
+                <th style="padding: 10px; border-bottom: 2px solid #388E3C;">Pronouns (English)</th>
+                <th style="padding: 10px; border-bottom: 2px solid #388E3C;">Ser (To be)</th>
+                <th style="padding: 10px; border-bottom: 2px solid #388E3C;">Estar (To be)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Yo</strong> (I)</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">soy</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">estoy</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Tú</strong> (You, singular informal)</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">eres</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">estás</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Él / Ella / Usted</strong> (He / She / You, singular formal)</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">es</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">está</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Nosotros / Nosotras</strong> (We)</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">somos</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">estamos</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Vosotros / Vosotras</strong> (You all, plural informal Spain)</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">sois</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">estáis</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px;"><strong>Ellos / Ellas / Ustedes</strong> (They / You all, plural formal)</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">son</td>
+                <td style="padding: 10px; color: #e65100; font-weight: bold;">están</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grammar-note" style="margin-bottom: 25px; border-color: #2196F3; background-color: #E3F2FD;">
+        <h3 style="color: #1565C0; margin-top: 0; margin-bottom: 10px;">🔄 Action Verbs: "Yo" vs. "Tú"</h3>
+        <p style="margin-top: 0; color: #333;">
+          <strong>Different person = different verb form!</strong> In Spanish, the action words (verbs) change shape based on who is doing the action. For regular verbs, the "Yo" (I) form usually ends with the letter <strong>-o</strong>, while the "Tú" (You) form usually ends with <strong>-as</strong> or <strong>-es</strong>. 
+        </p>
+        <p style="color: #333; margin-bottom: 0;">
+          Also, if it's a reflexive verb (an action you do to yourself, like getting yourself up or washing yourself), the little word in front changes from <strong>me</strong> to <strong>te</strong>. Check out how some of our routine verbs change:
+        </p>
+        
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; margin-top: 15px; background: white; border-radius: 8px; overflow: hidden; font-size: 16px; text-align: left; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <thead>
+              <tr style="background: #2196F3; color: white;">
+                <th style="padding: 10px; border-bottom: 2px solid #1976D2;">Verb (Action)</th>
+                <th style="padding: 10px; border-bottom: 2px solid #1976D2;">🙋 Yo (I...)</th>
+                <th style="padding: 10px; border-bottom: 2px solid #1976D2;">👉 Tú (You...)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Levantarse</strong> (to get up)</td>
+                <td style="padding: 10px; color: #1565C0; font-weight: bold;"><span style="color: #e65100;">me</span> levant<span style="color: #e65100;">o</span></td>
+                <td style="padding: 10px; color: #1565C0; font-weight: bold;"><span style="color: #e65100;">te</span> levant<span style="color: #e65100;">as</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Desayunar</strong> (to have breakfast)</td>
+                <td style="padding: 10px; color: #1565C0; font-weight: bold;">desayun<span style="color: #e65100;">o</span></td>
+                <td style="padding: 10px; color: #1565C0; font-weight: bold;">desayun<span style="color: #e65100;">as</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Estudiar español</strong> (to study Spanish)</td>
+                <td style="padding: 10px; color: #1565C0; font-weight: bold;">estudi<span style="color: #e65100;">o</span> español</td>
+                <td style="padding: 10px; color: #1565C0; font-weight: bold;">estudi<span style="color: #e65100;">as</span> español</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 10px;"><strong>Almorzar</strong> (to eat lunch)</td>
+                <td style="padding: 10px; color: #1565C0; font-weight: bold;">almuerz<span style="color: #e65100;">o</span></td>
+                <td style="padding: 10px; color: #1565C0; font-weight: bold;">almuerz<span style="color: #e65100;">as</span></td>
+              </tr>
+              <tr>
+                <td style="padding: 10px;"><strong>Cenar</strong> (to have dinner)</td>
+                <td style="padding: 10px; color: #1565C0; font-weight: bold;">cen<span style="color: #e65100;">o</span></td>
+                <td style="padding: 10px; color: #1565C0; font-weight: bold;">cen<span style="color: #e65100;">as</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <h3 style="color: #e65100;">🙋 Yo (I...)</h3>
+      <div class="vocab-grid" id="vocabGrid"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let availableVoices = [];
+
+  function loadVoices() {
+    availableVoices = window.speechSynthesis.getVoices();
+  }
+
+  if ('speechSynthesis' in window) {
+    loadVoices();
+    if (window.speechSynthesis.onvoiceschanged !== undefined) {
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+  }
+
+  /* --- DATA FOR NUMBERS & VOCABULARY --- */
+  const numbersEs = [
+    "cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez",
+    "once","doce","trece","catorce","quince","dieciséis","diecisiete","dieciocho","diecinueve","veinte",
+    "veintiuno","veintidós","veintitrés","veinticuatro","veinticinco","veintiséis","veintisiete","veintiocho","veintinueve",
+    "treinta", "treinta y uno", "treinta y dos", "treinta y tres", "treinta y cuatro", "treinta y cinco", "treinta y seis", "treinta y siete", "treinta y ocho", "treinta y nueve",
+    "cuarenta", "cuarenta y uno", "cuarenta y dos", "cuarenta y tres", "cuarenta y cuatro", "cuarenta y cinco", "cuarenta y seis", "cuarenta y siete", "cuarenta y ocho", "cuarenta y nueve",
+    "cincuenta", "cincuenta y uno", "cincuenta y dos", "cincuenta y tres", "cincuenta y cuatro", "cincuenta y cinco", "cincuenta y seis", "cincuenta y siete", "cincuenta y ocho", "cincuenta y nueve",
+    "sesenta", "sesenta y uno", "sesenta y dos", "sesenta y tres", "sesenta y cuatro", "sesenta y cinco", "sesenta y seis", "sesenta y siete", "sesenta y ocho", "sesenta y nueve",
+    "setenta", "setenta y uno", "setenta y dos", "setenta y tres", "setenta y cuatro", "setenta y cinco", "setenta y seis", "setenta y siete", "setenta y ocho", "setenta y nueve",
+    "ochenta", "ochenta y uno", "ochenta y dos", "ochenta y tres", "ochenta y cuatro", "ochenta y cinco", "ochenta y seis", "ochenta y siete", "ochenta y ocho", "ochenta y nueve",
+    "noventa", "noventa y uno", "noventa y dos", "noventa y tres", "noventa y cuatro", "noventa y cinco", "noventa y seis", "noventa y siete", "noventa y ocho", "noventa y nueve"
+  ];
+
+  const vocabList = [
+    { es: "Me levanto", en: "I get up", icon: "🛌" },
+    { es: "Me lavo la cara", en: "I wash my face", icon: "🧼" },
+    { es: "Me cepillo los dientes", en: "I brush my teeth", icon: "🪥" },
+    { es: "Me ducho", en: "I shower", icon: "🚿" },
+    { es: "Me peino", en: "I comb my hair", icon: "💇" },
+    { es: "Desayuno", en: "I have breakfast", icon: "🍳" },
+    { es: "Como/Almuerzo", en: "I eat lunch", icon: "🥘" },
+    { es: "Ceno", en: "I have dinner", icon: "🍲" },
+    { es: "Voy a la escuela", en: "I go to school", icon: "🎒" },
+    { es: "Hago la tarea", en: "I do homework", icon: "📝" },
+    { es: "Trabajo", en: "I work", icon: "💼" },
+    { es: "Estudio", en: "I study", icon: "📖" },
+    { es: "Estudio español", en: "I study Spanish", icon: "🇪🇸" },
+    { es: "Estudio inglés", en: "I study English", icon: "🇬🇧" },
+    { es: "Juego", en: "I play", icon: "⚽" },
+    { es: "Dibujo", en: "I draw", icon: "🎨" },
+    { es: "Veo la tele", en: "I watch TV", icon: "📺" },
+    { es: "Me acuesto", en: "I go to bed", icon: "💤" }
+  ];
+
+  window.onload = function() {
+    renderNumbers();
+    renderVocab();
+  };
+
+  function renderNumbers() {
+    const grid = document.getElementById('numberGrid');
+    numbersEs.forEach((num, index) => {
+      let div = document.createElement('div');
+      div.className = 'num-card';
+      div.onclick = () => speak(num);
+      div.innerHTML = `
+        <span class="num-digit">${index}</span>
+        <span class="num-word">${num}</span>
+      `;
+      grid.appendChild(div);
+    });
+  }
+
+  function renderVocab() {
+    const grid = document.getElementById('vocabGrid');
+    vocabList.forEach(item => {
+      let div = document.createElement('div');
+      div.className = 'vocab-card';
+      div.onclick = () => speak(item.es);
+      div.innerHTML = `
+        <span class="emoji">${item.icon}</span>
+        <span class="es-text">${item.es}</span>
+        <span class="en-text">${item.en}</span>
+      `;
+      grid.appendChild(div);
+    });
+  }
+
+  /* --- TTS FUNCTION (标点欺骗版) --- */
+  function speak(text) {
+    if (!('speechSynthesis' in window)) {
+      console.log("TTS not supported.");
+      return;
+    }
+
+    let cleanText = text.replace(/<[^>]*>/g, '');
+    cleanText = cleanText + ".";
+    
+    window.speechSynthesis.cancel();
+    let utterance = new SpeechSynthesisUtterance(cleanText);
+    
+    utterance.rate = 0.9; 
+    utterance.pitch = 1.0;
+    utterance.lang = 'es-ES'; 
+    
+    if (availableVoices.length > 0) {
+      let bestVoice = availableVoices.find(v => 
+        v.lang.startsWith('es') && 
+        (v.name.includes('Premium') || v.name.includes('Google') || v.name.includes('Microsoft'))
+      );
+      if (!bestVoice) bestVoice = availableVoices.find(v => v.lang.startsWith('es'));
+      if (bestVoice) utterance.voice = bestVoice;
+    }
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  /* --- TAB SWITCHING --- */
+  function switchTab(tabId) {
+    document.querySelectorAll('.section-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => {
+      if (btn.getAttribute('onclick').includes(tabId)) {
+        btn.classList.add('active');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
