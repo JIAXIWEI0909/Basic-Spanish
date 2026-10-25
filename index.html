@@ -1,0 +1,2372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Spanish Learning: Greetings, Numbers, Routine & Poetry</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFF7ED;        
+    --ink: #333;          
+    --accent: #FFA94D;    
+    --accent2: #FFD8A8;   
+    --card: #fff;         
+    --green: #2e7d32;     
+    --hover: #FFF0D4;     
+    --flip-bg: #e65100;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Nunito', 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    padding-bottom: 60px;
+  }
+
+  header {
+    padding: 25px;
+    text-align: center;
+    background: #fff0da;
+    border-bottom: 4px solid var(--accent);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  h1 {
+    margin: 0;
+    font-weight: 900;
+    color: #e65100;
+    font-size: clamp(24px, 5vw, 36px);
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    color: #e65100;
+    border-left: 5px solid var(--accent);
+    padding-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+  
+  h3 {
+    color: #1565C0;
+    border-bottom: 1px solid #E3F2FD;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  h4 {
+    color: #2e7d32;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+
+  p { line-height: 1.6; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* --- Navigation Tabs --- */
+  .nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+
+  .tab-btn {
+    border: 2px solid var(--accent);
+    padding: 10px 25px;
+    background: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 800;
+    font-family: inherit;
+    transition: all 0.2s;
+    color: var(--ink);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-size: 1.05em;
+  }
+
+  .tab-btn:hover { background: var(--hover); transform: translateY(-2px); }
+  
+  .tab-btn.active {
+    background: var(--accent);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 169, 77, 0.4);
+    border-color: var(--accent);
+  }
+
+  /* Section Control */
+  .section-content { display: none; animation: fadeIn 0.3s ease-out; }
+  .section-content.active { display: block; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* --- Cards General --- */
+  .card {
+    background: var(--card);
+    border: 1px solid #ffe0b2;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    margin-bottom: 20px;
+  }
+
+  /* --- Vocab Grid --- */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 15px;
+  }
+
+  .vocab-card {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vocab-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 10px rgba(255, 169, 77, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .emoji { font-size: 34px; margin-bottom: 8px; }
+  .es-text { font-size: 16px; font-weight: 900; color: #333; margin-bottom: 4px; }
+  .en-text { font-size: 14px; color: #666; font-weight: bold; }
+  .sub-note { font-size: 0.85em; color: #777; font-weight: normal; display: block; margin-top: 3px; }
+
+  /* --- Numbers & Age Specific Styles --- */
+  .number-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+    gap: 12px;
+  }
+
+  .num-card {
+    background: #fff;
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 12px 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+  }
+
+  .num-card:hover {
+    background: var(--accent2);
+    transform: scale(1.08);
+  }
+
+  .num-digit {
+    font-size: 24px;
+    font-weight: 900;
+    color: #e65100;
+    display: block;
+  }
+
+  .num-word {
+    font-size: 14px;
+    font-weight: 700;
+    color: #555;
+    margin-top: 5px;
+  }
+
+  .rule-box {
+    background: #FFF3E0;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #FF9800;
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .rule-box p { margin: 10px 0; font-weight: 600; cursor: pointer; padding: 5px; border-radius: 8px; transition: background 0.2s; }
+  .rule-box p:hover { background: #ffe0b2; }
+  
+  .grammar-note {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #444;
+    border: 1px dashed #FF9800;
+  }
+  
+  .grammar-note ul { margin: 8px 0 0 0; padding-left: 20px; }
+  .grammar-note li { margin-bottom: 8px; }
+
+  /* --- Builder Specific Styles --- */
+  .builder-area { background: #fff; padding: 30px; border-radius: 20px; text-align: center; border: 3px dashed var(--accent); margin-top: 20px;}
+  .control-group { margin-bottom: 25px; text-align: left; max-width: 550px; margin-left: auto; margin-right: auto; }
+  .control-label { display: block; font-weight: 800; color: #e65100; margin-bottom: 10px; font-size: 1.1em; }
+  .time-display-box { background: #FFF3E0; padding: 12px; border-radius: 10px; text-align: center; margin-bottom: 8px; font-weight: bold; color: #d35400; font-size: 1.3em; border: 1px solid #FFD8A8; }
+  .period-hint { font-size: 0.7em; color: #7f8c8d; font-weight: normal; display: block; margin-top: 4px; }
+  input[type="range"] { width: 100%; margin: 10px 0; cursor: pointer; accent-color: #e65100; height: 8px; }
+  select { width: 100%; padding: 14px; font-size: 16px; border: 2px solid #FFD8A8; border-radius: 12px; font-family: inherit; background: white; outline: none; cursor: pointer; }
+  select:focus { border-color: var(--accent); }
+  .action-btn { background: var(--accent); color: white; border: none; padding: 16px 40px; border-radius: 50px; font-size: 20px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 0 #e65100; transition: transform 0.1s; margin-top: 15px; width: 100%; max-width: 550px; }
+  .action-btn:active { transform: translateY(4px); box-shadow: 0 0 0 #e65100; }
+  #result-box { margin-top: 30px; padding: 25px; background: #FFF7ED; border-radius: 15px; min-height: 100px; display: none; text-align: left; border-left: 6px solid #e65100; }
+  .res-sp { font-size: 1.6em; color: #333; font-weight: 800; margin-bottom: 8px; display: block; line-height: 1.3; }
+  .res-en { font-size: 1.1em; color: #777; font-weight: bold; display: block; font-style: italic; }
+  .highlight { color: #e65100; }
+  .highlight-loc { color: #2e7d32; }
+  .highlight-time { color: #c0392b; }
+
+  /* --- Pronoun Architecture Styles --- */
+  .pronoun-btn {
+    border: 2px solid #FFD8A8;
+    padding: 12px 20px;
+    background: #fff;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.05em;
+    text-align: left;
+    transition: all 0.2s;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pronoun-btn:hover { background: #FFF3E0; border-color: var(--accent); }
+  .pronoun-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    box-shadow: 0 4px 8px rgba(255, 169, 77, 0.4);
+    transform: scale(1.02);
+  }
+  
+  .pronoun-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-size: 0.95em;
+  }
+  .pronoun-table th { background: var(--accent); color: white; padding: 12px; text-align: left; }
+  .pronoun-table td { padding: 12px; border-bottom: 1px solid #eee; }
+  .pronoun-table tr:last-child td { border-bottom: none; }
+
+  /* --- Flashcards CSS (For Story Time) --- */
+  .flashcard-scene {
+    width: 100%;
+    max-width: 500px;
+    height: 220px;
+    margin: 20px auto;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  .flashcard.is-flipped { transform: rotateY(180deg); }
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 4px solid var(--accent);
+  }
+  .card-front { background: white; color: #333; }
+  .card-back {
+    background: var(--flip-bg);
+    color: white;
+    transform: rotateY(180deg);
+    border-color: #d35400;
+  }
+  .fc-icon { font-size: 40px; margin-bottom: 10px; display: block;}
+  .fc-word { font-size: 22px; font-weight: 900; }
+  .fc-sub { font-size: 14px; margin-top: 5px; opacity: 0.9; font-weight: bold; }
+  .fc-hint { font-size: 12px; color: #999; margin-top: auto; font-style: italic; }
+
+  .audio-btn-small {
+    background: #eee;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .audio-btn-small:hover { background: var(--accent2); color: #e65100; transform: scale(1.1); }
+  
+  .nav-controls { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+  .story-nav-btn {
+    background: #333; color: white; border: none; padding: 10px 25px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.2s; font-size: 16px;
+  }
+  .story-nav-btn:hover { background: #000; transform: translateY(-2px); }
+  
+  /* Story Choice Tabs */
+  .story-choice-btn {
+    border: 2px solid #ccc;
+    background: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+  .story-choice-btn:hover { background: #f0f0f0; }
+  .story-choice-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+  /* --- Poetry Section Styles (Plate 4) --- */
+  .poem-stanza {
+    background: white;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    line-height: 1.8;
+    font-size: 1.15em;
+    color: #333;
+    border-left: 5px solid var(--accent);
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  }
+  .poem-stanza:hover {
+    background: var(--hover);
+    transform: translateX(4px);
+    box-shadow: 0 4px 10px rgba(255, 169, 77, 0.2);
+  }
+  .poem-stanza-en {
+    background: white;
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    line-height: 1.8;
+    font-size: 1.05em;
+    color: #555;
+    font-style: italic;
+    border-left: 5px solid #64B5F6;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  }
+
+  /* Sub navigation inside Poetry */
+  .sub-nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+  }
+  .poem-tab-btn {
+    border: 2px solid #e65100;
+    padding: 10px 22px;
+    background: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 1.05em;
+    color: #e65100;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+  .poem-tab-btn:hover {
+    background: var(--hover);
+    transform: translateY(-2px);
+  }
+  .poem-tab-btn.active {
+    background: #e65100;
+    color: white;
+    box-shadow: 0 4px 12px rgba(230, 81, 0, 0.35);
+  }
+  .poem-sub-content {
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+  }
+  .poem-sub-content.active {
+    display: block;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🇪🇸 Aprender Español</h1>
+  <p>Greetings, Numbers, Routine & Poetry</p>
+</header>
+
+<div class="container">
+  
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab('saludos')">1. Saludos (Greetings)</button>
+    <button class="tab-btn" onclick="switchTab('numeros')">2. Números & Edad</button>
+    <button class="tab-btn" onclick="switchTab('vocabulario')">3. Vocabulario</button>
+    <button class="tab-btn" onclick="switchTab('poesia')">4. Poesía (Poetry)</button>
+  </div>
+
+  <!-- PAGE 1: SALUDOS -->
+  <div id="saludos" class="section-content active">
+    
+    <div class="card">
+      <h2>👋 Saludos Comunes (Greetings)</h2>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('Hola')">
+          <span class="emoji">👋</span>
+          <span class="es-text">Hola</span>
+          <span class="en-text">Hello</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Buenos días')">
+          <span class="emoji">🌅</span>
+          <span class="es-text">Buenos días</span>
+          <span class="en-text">Good morning</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Buenas tardes')">
+          <span class="emoji">🌇</span>
+          <span class="es-text">Buenas tardes</span>
+          <span class="en-text">Good afternoon</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Buenas noches')">
+          <span class="emoji">🌃</span>
+          <span class="es-text">Buenas noches</span>
+          <span class="en-text">Good evening / night</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🤝 Presentaciones (Introductions)</h2>
+        <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('¿Cómo te llamas?')">
+          <span class="emoji">❓</span>
+          <span class="es-text">¿Cómo te llamas?</span>
+          <span class="en-text">What is your name?</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Me llamo')">
+          <span class="emoji">🗣️</span>
+          <span class="es-text">Me llamo ...</span>
+          <span class="en-text">My name is ...</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Soy')">
+          <span class="emoji">🙋</span>
+          <span class="es-text">Soy ...</span>
+          <span class="en-text">I am ...</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Soy estudiante')">
+          <span class="emoji">🎓</span>
+          <span class="es-text">Soy estudiante</span>
+          <span class="en-text">I am a student</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Mucho gusto')">
+          <span class="emoji">🤝</span>
+          <span class="es-text">Mucho gusto</span>
+          <span class="en-text">Nice to meet you</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Encantado')">
+          <span class="emoji">✨</span>
+          <span class="es-text">Encantado(a)</span>
+          <span class="en-text">Delighted (Nice to meet you)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🎭 ¿Cómo estás? (Feelings & States)</h2>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('¿Cómo estás?')">
+          <span class="emoji">🤔</span>
+          <span class="es-text">¿Cómo estás?</span>
+          <span class="en-text">How are you? (Informal)</span>
+        </div>
+        <div class="vocab-card" onclick="speak('¿Cómo está usted?')">
+          <span class="emoji">👔</span>
+          <span class="es-text">¿Cómo está usted?</span>
+          <span class="en-text">How are you? (Formal)</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Estoy bien')">
+          <span class="emoji">😊</span>
+          <span class="es-text">Estoy bien</span>
+          <span class="en-text">I am fine</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Estoy feliz')">
+          <span class="emoji">😄</span>
+          <span class="es-text">Estoy feliz</span>
+          <span class="en-text">I am happy</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Estoy triste')">
+          <span class="emoji">😢</span>
+          <span class="es-text">Estoy triste</span>
+          <span class="en-text">I am sad</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Estoy cansado')">
+          <span class="emoji">🥱</span>
+          <span class="es-text">Estoy cansado(a)</span>
+          <span class="en-text">I am tired</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🎉 Cortesía y Deseos (Politeness & Wishes)</h2>
+      <div class="vocab-grid">
+        <div class="vocab-card" onclick="speak('Por favor')">
+          <span class="emoji">🙏</span>
+          <span class="es-text">Por favor</span>
+          <span class="en-text">Please</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Gracias')">
+          <span class="emoji">🙌</span>
+          <span class="es-text">Gracias</span>
+          <span class="en-text">Thank you</span>
+        </div>
+        <div class="vocab-card" onclick="speak('De nada')">
+          <span class="emoji">🌟</span>
+          <span class="es-text">De nada</span>
+          <span class="en-text">You're welcome</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Feliz cumpleaños')">
+          <span class="emoji">🎂</span>
+          <span class="es-text">Feliz cumpleaños</span>
+          <span class="en-text">Happy birthday</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Feliz año nuevo')">
+          <span class="emoji">🎆</span>
+          <span class="es-text">Feliz año nuevo</span>
+          <span class="en-text">Happy new year</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: NÚMEROS & EDAD -->
+  <div id="numeros" class="section-content">
+    <div class="card">
+      <h2>🔢 Los Números (Click to Listen)</h2>
+      <div class="number-grid" id="numberGrid"></div>
+    </div>
+    
+    <div class="card">
+      <h2>🎂 La Edad (Age)</h2>
+      <div class="rule-box" style="text-align: center; font-size: 1.2em;">
+        <p onclick="speak('¿Cuántos años tienes?')" style="cursor: pointer; padding-bottom: 10px; border-bottom: 1px dashed #FFD8A8;">
+          🗣️ <strong>¿Cuántos años tienes?</strong><br>
+          <span style="font-size: 0.85em; color: #666;">(How old are you?)</span>
+        </p>
+        <p onclick="speak('Tengo catorce años.')" style="cursor: pointer;">
+          🗣️ To answer:<br>
+          <strong>Tengo</strong> [number] <strong>años.</strong><br>
+          <span style="font-size: 0.8em; color: #666;">(Literally: I have ... years.)</span>
+        </p>
+        <p style="color: #e65100; font-weight: bold; margin-top: 15px;">
+          Example: Tengo 14 años. <br>
+          <span style="font-size: 0.85em; color: #666;">(I am 14 years old.)</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: VOCABULARIO -->
+  <div id="vocabulario" class="section-content">
+    
+    <!-- Pronoun Selection -->
+    <div class="card">
+      <h2>🧑 Conjugation & Routine (Pronouns)</h2>
+      <p style="color:#666; margin-bottom:15px;">Select the pronoun below. The Spanish AND English verbs will automatically update to match the selected person!</p>
+
+      <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; align-items: stretch;">
+        <!-- Left: Buttons -->
+        <div style="flex: 1; min-width: 220px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="background: var(--accent); color: white; padding: 12px; border-radius: 8px; font-weight: bold; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            👇 Click to switch verbs
+          </div>
+          <button id="btn-yo" class="pronoun-btn active" onclick="selectPronoun('yo')">🙋 Yo (I)</button>
+          <button id="btn-tu" class="pronoun-btn" onclick="selectPronoun('tu')">👉 Tú (You)</button>
+          <button id="btn-el" class="pronoun-btn" onclick="selectPronoun('el')">👤 Él / Ella (He/She)</button>
+          <button id="btn-nosotros" class="pronoun-btn" onclick="selectPronoun('nosotros')">👥 Nosotros (We)</button>
+          <button id="btn-vosotros" class="pronoun-btn" onclick="selectPronoun('vosotros')">🗣️ Vosotros (You all)</button>
+          <button id="btn-ellos" class="pronoun-btn" onclick="selectPronoun('ellos')">🌍 Ellos / Ellas (They)</button>
+        </div>
+        
+        <!-- Right: Table -->
+        <div style="flex: 2; min-width: 300px; display: flex; flex-direction: column;">
+           <table class="pronoun-table" style="height: 100%;">
+             <thead>
+               <tr><th>Pronoun (Español)</th><th>English Meaning</th></tr>
+             </thead>
+             <tbody>
+               <tr><td><strong>Yo</strong></td><td>I</td></tr>
+               <tr><td><strong>Tú</strong></td><td>You (informal singular)</td></tr>
+               <tr><td><strong>Él / Ella / Usted</strong></td><td>He / She / You (formal singular)</td></tr>
+               <tr><td><strong>Nosotros / Nosotras</strong></td><td>We</td></tr>
+               <tr><td><strong>Vosotros / Vosotras</strong></td><td>You all (informal Spain)</td></tr>
+               <tr><td><strong>Ellos / Ellas / Ustedes</strong></td><td>They / You all (formal)</td></tr>
+             </tbody>
+           </table>
+        </div>
+      </div>
+
+      <!-- Basic Verbs: Ser, Estar, Tener -->
+      <h3 style="color: #e65100;">📌 Verbos Básicos (Essential Verbs)</h3>
+      <p style="color:#666; font-size:0.9em; margin-bottom:15px;">Notice how <em>Ser</em> is for identity, <em>Estar</em> is for feelings/locations, and <em>Tener</em> is for possession/age.</p>
+      <div class="vocab-grid" id="basicVerbsGrid"></div>
+
+      <!-- Routine Verbs -->
+      <h3 style="color: #e65100; margin-top:35px;">📅 Actividades Diarias (Daily Routine)</h3>
+      <div class="vocab-grid" id="routineVerbsGrid"></div>
+    </div>
+
+    <!-- NEW: Me gusta & Querer (Updated with Subjects, Sports, and Dialogues) -->
+    <div class="card">
+      <h2>🍔 Expresando Gustos y Deseos (Likes & Wants)</h2>
+      <p style="color:#666; margin-bottom:15px;">How to express what you like and what you want to order.</p>
+      
+      <div class="grammar-note">
+        <strong>💡 Gustar (To like)</strong><br>
+        This verb works differently! It literally means "it is pleasing to me". 
+        <ul>
+          <li><strong>Me gusta + Singular Noun:</strong><br> <em>Me gusta el café.</em> (I like coffee.) | <em>Me gusta el voleibol.</em> (I like volleyball.) | <em>Me gusta el tenis de mesa.</em> (I like table tennis.)</li>
+          <li><strong>Me gusta + Verb (Infinitive):</strong><br> <em>Me gusta esquiar.</em> (I like to ski.) | <em>Me gusta dibujar.</em> (I like to draw.) | <em>Me gusta jugar al voleibol.</em> (I like to play volleyball.)</li>
+          <li><strong>Me gustan + Plural Nouns:</strong><br> <em>Me gustan los deportes.</em> (I like sports.) | <em>Me gustan las óperas.</em> (I like operas.) | <em>Me gustan las ciencias.</em> (I like science.) | <em>Me gustan las matemáticas.</em> (I like maths.)</li>
+          <li><strong>Negation (Dislike):</strong> Simply add <strong>No</strong> before the pronoun:<br> <em>No me gusta...</em> (I don't like...) | <em>No me gustan...</em> (I don't like [plural]...)</li>
+        </ul>
+      </div>
+
+      <div class="grammar-note" style="margin-top: 15px;">
+        <strong>💡 Querer (To want)</strong><br>
+        Use this to express a desire or to order food. (Conjugates depending on the person: e -> ie)<br>
+        <em>Forms:</em> yo <strong>quiero</strong>, tú <strong>quieres</strong>, él <strong>quiere</strong>, nosotros <strong>queremos</strong>, vosotros <strong>queréis</strong>, ellos <strong>quieren</strong>.<br><br>
+        <em>Examples (Ordering Food):</em><br>
+        🍔 <em>Quiero una hamburguesa, por favor.</em> (I want a hamburger, please.)<br>
+        🥗 <em>Quiero una ensalada.</em> (I want a salad.)
+      </div>
+
+      <div class="vocab-grid" style="margin-top: 20px;">
+        <!-- Gustar + Singular Noun -->
+        <div class="vocab-card" onclick="speak('Me gusta el café')">
+          <span class="emoji">☕</span>
+          <span class="es-text">Me gusta...</span>
+          <span class="en-text">I like (singular)</span>
+          <span class="sub-note">Me gusta el café.</span>
+        </div>
+        
+        <!-- Gustar + Verbs -->
+        <div class="vocab-card" onclick="speak('Me gusta dibujar')">
+          <span class="emoji">🎨</span>
+          <span class="es-text">Me gusta...</span>
+          <span class="en-text">I like (to draw)</span>
+          <span class="sub-note">Me gusta dibujar.</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Me gusta jugar al voleibol')">
+          <span class="emoji">🏐</span>
+          <span class="es-text">Me gusta...</span>
+          <span class="en-text">I like (to play)</span>
+          <span class="sub-note">Me gusta jugar al voleibol.</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Me gusta esquiar')">
+          <span class="emoji">⛷️</span>
+          <span class="es-text">Me gusta...</span>
+          <span class="en-text">I like (to ski)</span>
+          <span class="sub-note">Me gusta esquiar.</span>
+        </div>
+
+        <!-- Gustar + Plural Nouns -->
+        <div class="vocab-card" onclick="speak('Me gustan los deportes')">
+          <span class="emoji">🏀</span>
+          <span class="es-text">Me gustan...</span>
+          <span class="en-text">I like (plural)</span>
+          <span class="sub-note">Me gustan los deportes.</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Me gustan las óperas')">
+          <span class="emoji">🎭</span>
+          <span class="es-text">Me gustan...</span>
+          <span class="en-text">I like (plural)</span>
+          <span class="sub-note">Me gustan las óperas.</span>
+        </div>
+
+        <!-- Querer (Food) -->
+        <div class="vocab-card" onclick="speak('Quiero una hamburguesa')">
+          <span class="emoji">🍔</span>
+          <span class="es-text">Quiero...</span>
+          <span class="en-text">I want / I order...</span>
+          <span class="sub-note">Quiero una hamburguesa.</span>
+        </div>
+        <div class="vocab-card" onclick="speak('Quiero una ensalada')">
+          <span class="emoji">🥗</span>
+          <span class="es-text">Quiero...</span>
+          <span class="en-text">I want / I order...</span>
+          <span class="sub-note">Quiero una ensalada.</span>
+        </div>
+      </div>
+
+      <!-- NEW SECTION: SUBJECTS & SPORTS (LIKES & DISLIKES) -->
+      <h3 style="color: #e65100; margin-top: 35px;">📚 Asignaturas y Deportes: Gustos (Subjects & Sports)</h3>
+      <p style="color:#666; font-size:0.95em; margin-bottom: 15px;">
+        Practice expressing whether you like or dislike school subjects and sports. (Plural subjects take <em>me gustan / no me gustan</em>, singular take <em>me gusta / no me gusta</em>):
+      </p>
+
+      <div class="vocab-grid">
+        <!-- Science -->
+        <div class="vocab-card" onclick="speak('Me gustan las ciencias')">
+          <span class="emoji">🔬</span>
+          <span class="es-text">Me gustan las ciencias</span>
+          <span class="en-text">I like science</span>
+          <span class="sub-note">Science (Plural)</span>
+        </div>
+        <div class="vocab-card" onclick="speak('No me gustan las ciencias')">
+          <span class="emoji">🧪</span>
+          <span class="es-text">No me gustan las ciencias</span>
+          <span class="en-text">I don't like science</span>
+          <span class="sub-note">Dislike science</span>
+        </div>
+
+        <!-- Maths -->
+        <div class="vocab-card" onclick="speak('Me gustan las matemáticas')">
+          <span class="emoji">📐</span>
+          <span class="es-text">Me gustan las matemáticas</span>
+          <span class="en-text">I like maths</span>
+          <span class="sub-note">Maths (Plural)</span>
+        </div>
+        <div class="vocab-card" onclick="speak('No me gustan las matemáticas')">
+          <span class="emoji">🔢</span>
+          <span class="es-text">No me gustan las matemáticas</span>
+          <span class="en-text">I don't like maths</span>
+          <span class="sub-note">Dislike maths</span>
+        </div>
+
+        <!-- Social Studies -->
+        <div class="vocab-card" onclick="speak('Me gustan las ciencias sociales')">
+          <span class="emoji">🌍</span>
+          <span class="es-text">Me gustan las ciencias sociales</span>
+          <span class="en-text">I like social studies</span>
+          <span class="sub-note">Social studies (Plural)</span>
+        </div>
+        <div class="vocab-card" onclick="speak('No me gustan las ciencias sociales')">
+          <span class="emoji">🗺️</span>
+          <span class="es-text">No me gustan las ciencias sociales</span>
+          <span class="en-text">I don't like social studies</span>
+          <span class="sub-note">Dislike social studies</span>
+        </div>
+
+        <!-- Table Tennis -->
+        <div class="vocab-card" onclick="speak('Me gusta el tenis de mesa')">
+          <span class="emoji">🏓</span>
+          <span class="es-text">Me gusta el tenis de mesa</span>
+          <span class="en-text">I like table tennis</span>
+          <span class="sub-note">Table tennis / Ping-pong</span>
+        </div>
+        <div class="vocab-card" onclick="speak('No me gusta el tenis de mesa')">
+          <span class="emoji">❌</span>
+          <span class="es-text">No me gusta el tenis de mesa</span>
+          <span class="en-text">I don't like table tennis</span>
+          <span class="sub-note">Dislike table tennis</span>
+        </div>
+
+        <!-- Volleyball -->
+        <div class="vocab-card" onclick="speak('Me gusta el voleibol')">
+          <span class="emoji">🏐</span>
+          <span class="es-text">Me gusta el voleibol</span>
+          <span class="en-text">I like volleyball</span>
+          <span class="sub-note">Volleyball (Singular)</span>
+        </div>
+        <div class="vocab-card" onclick="speak('No me gusta el voleibol')">
+          <span class="emoji">🚫</span>
+          <span class="es-text">No me gusta el voleibol</span>
+          <span class="en-text">I don't like volleyball</span>
+          <span class="sub-note">Dislike volleyball</span>
+        </div>
+      </div>
+
+      <!-- CORRECTED DIALOGUE: DO YOU LIKE THIS CLASS? IS IT INTERESTING/FUN? -->
+      <div style="background: #E8F5E9; padding: 25px; border-radius: 14px; border-left: 6px solid #2e7d32; margin-top: 30px;">
+        <h4 style="color:#1b5e20; margin-top:0; font-size:1.35em;">💬 Diálogo: ¿Te gusta la clase? (Asking about Classes & Fun)</h4>
+        <p style="font-size:1.05em; color:#333; margin-bottom: 20px;">
+          Practice these conversations about whether school subjects are fun, interesting, or boring. Click any dialogue box to listen:
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:15px;">
+          <!-- Dialogue 1: Perfectly matched audio and text -->
+          <button style="background:white; border:2px solid #81C784; border-radius:12px; padding:15px; cursor:pointer; text-align:left; color:#333; font-size:1.05em; transition: 0.2s;" onmouseover="this.style.background='#F1F8E9'" onmouseout="this.style.background='white'" onclick="speak('¿Te gusta esta clase? ¡Sí, me gusta mucho, es muy divertida!')">
+            <strong style="color:#2e7d32;">A:</strong> ¿Te gusta esta clase? <span style="color:#666; font-size:0.9em;">(Do you like this class?)</span><br>
+            <strong style="color:#e65100;">B:</strong> ¡Sí, me gusta mucho, es muy divertida! <span style="color:#666; font-size:0.9em;">(Yes, I like it a lot, it is very fun!)</span>
+          </button>
+
+          <!-- Dialogue 2: Audio updated to include 'y aprendemos mucho' -->
+          <button style="background:white; border:2px solid #81C784; border-radius:12px; padding:15px; cursor:pointer; text-align:left; color:#333; font-size:1.05em; transition: 0.2s;" onmouseover="this.style.background='#F1F8E9'" onmouseout="this.style.background='white'" onclick="speak('¿Es interesante la clase de ciencias? Sí, es súper interesante y aprendemos mucho.')">
+            <strong style="color:#2e7d32;">A:</strong> ¿Es interesante la clase de ciencias? <span style="color:#666; font-size:0.9em;">(Is the science class interesting?)</span><br>
+            <strong style="color:#e65100;">B:</strong> Sí, es súper interesante y aprendemos mucho. <span style="color:#666; font-size:0.9em;">(Yes, it's super interesting and we learn a lot.)</span>
+          </button>
+
+          <!-- Dialogue 3: Audio updated to exactly match text (removed 'y aburridas') -->
+          <button style="background:white; border:2px solid #81C784; border-radius:12px; padding:15px; cursor:pointer; text-align:left; color:#333; font-size:1.05em; transition: 0.2s;" onmouseover="this.style.background='#F1F8E9'" onmouseout="this.style.background='white'" onclick="speak('¿Te gustan las matemáticas? No, no me gustan las matemáticas, son un poco difíciles.')">
+            <strong style="color:#2e7d32;">A:</strong> ¿Te gustan las matemáticas? <span style="color:#666; font-size:0.9em;">(Do you like maths?)</span><br>
+            <strong style="color:#e65100;">B:</strong> No, no me gustan las matemáticas, son un poco difíciles. <span style="color:#666; font-size:0.9em;">(No, I don't like maths, they are a bit difficult.)</span>
+          </button>
+
+          <!-- Dialogue 4: Audio punctuation aligned -->
+          <button style="background:white; border:2px solid #81C784; border-radius:12px; padding:15px; cursor:pointer; text-align:left; color:#333; font-size:1.05em; transition: 0.2s;" onmouseover="this.style.background='#F1F8E9'" onmouseout="this.style.background='white'" onclick="speak('¿Es divertido jugar al tenis de mesa? ¡Sí, es divertidísimo! ¿Jugamos después de la escuela?')">
+            <strong style="color:#2e7d32;">A:</strong> ¿Es divertido jugar al tenis de mesa? <span style="color:#666; font-size:0.9em;">(Is it fun to play table tennis?)</span><br>
+            <strong style="color:#e65100;">B:</strong> ¡Sí, es divertidísimo! ¿Jugamos después de la escuela? <span style="color:#666; font-size:0.9em;">(Yes, it's so much fun! Shall we play after school?)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Time Expressions -->
+    <div class="card">
+      <h2>⏰ La Hora (The Time)</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 25px; align-items: center; justify-content: center;">
+        <div style="width: 140px; height: 140px; background: #fff; border: 8px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">🕒</div>
+        
+        <div class="rule-box">
+          <p onclick="speak('¿Qué hora es?')">🗣️ <strong>¿Qué hora es?</strong> (What time is it?)</p>
+          <hr style="border:1px solid #FFD8A8">
+          
+          <div class="grammar-note">
+            <strong>💡 The Magic Rule: Hours & Minutes!</strong><br><br>
+            <ul>
+              <li><strong>1 is special!</strong> If the hour is 1 (1:00, 1:15), use <strong>Es la una...</strong><br>
+              <em>Examples: Es la una. (1:00)</em></li>
+              <li><strong>Everything else (2-12):</strong> Use <strong>Son las...</strong><br>
+              <em>Examples: Son las dos. (2:00)</em></li>
+            </ul>
+            <strong>Minutes:</strong> Add <strong>"y"</strong> (and).<br>
+            Instead of 15 and 30, use shortcuts:<br>
+            - <strong>y cuarto</strong> (quarter past)<br>
+            - <strong>y media</strong> (half past)
+          </div>
+
+          <hr style="border:1px solid #FFD8A8; margin-top: 15px;">
+          <p onclick="speak('y cuarto')">🍰 :15 = <strong>y cuarto</strong> (quarter past)</p>
+          <p onclick="speak('y media')">🌓 :30 = <strong>y media</strong> (half past)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sentence Builder (3 Parts) -->
+    <div class="card" style="margin-top: 30px;">
+      <h2>🎮 Sentence Builder (La Rutina)</h2>
+      <p style="color:#666; margin-bottom:20px;">
+        Structure: <strong>Action + [Location] + Time (12h)</strong>
+      </p>
+      
+      <div class="builder-area">
+        
+        <!-- Action -->
+        <div class="control-group">
+          <label class="control-label">1. La Actividad (Activity):</label>
+          <select id="actSelect">
+            <option value="" disabled selected>-- Select Activity --</option>
+            <option value="Me levanto">Me levanto (I get up)</option>
+            <option value="Me lavo la cara">Me lavo la cara (I wash my face)</option>
+            <option value="Me cepillo los dientes">Me cepillo los dientes (I brush my teeth)</option>
+            <option value="Me ducho">Me ducho (I shower)</option>
+            <option value="Me peino">Me peino (I comb my hair)</option>
+            <option value="Desayuno">Desayuno (I have breakfast)</option>
+            <option value="Almuerzo">Almuerzo (I eat lunch)</option>
+            <option value="Ceno">Ceno (I have dinner)</option>
+            <option value="Voy a la escuela">Voy a la escuela (I go to school)</option>
+            <option value="Hago la tarea o los deberes">Hago la tarea / los deberes (I do homework)</option>
+            <option value="Trabajo">Trabajo (I work)</option>
+            <option value="Estudio">Estudio (I study)</option>
+            <option value="Juego">Juego (I play)</option>
+            <option value="Veo la tele">Veo la tele (I watch TV)</option>
+            <option value="Me acuesto">Me acuesto (I go to bed)</option>
+          </select>
+        </div>
+
+        <!-- Location -->
+        <div class="control-group">
+          <label class="control-label">2. El Lugar (Location) <span style="font-weight:normal; font-size:0.8em; color:#777;">*Optional</span>:</label>
+          <select id="locSelect">
+            <option value="" selected>-- Sin lugar (No location) --</option>
+            <option value="en casa">En casa (At home)</option>
+            <option value="en la escuela">En la escuela (At school)</option>
+            <option value="en la oficina">En la oficina (At the office)</option>
+            <option value="en la biblioteca">En la biblioteca (At the library)</option>
+            <option value="en el parque">En el parque (In the park)</option>
+            <option value="en el restaurante">En el restaurante (At the restaurant)</option>
+            <option value="en mi habitación">En mi habitación (In my room)</option>
+            <option value="en el baño">En el baño (In the bathroom)</option>
+          </select>
+        </div>
+
+        <!-- Time -->
+        <div class="control-group">
+          <label class="control-label">3. La Hora (Time):</label>
+          <div class="time-display-box">
+            <span id="timeDisplay">12:00</span>
+            <span id="periodDisplay" class="period-hint">del mediodía</span>
+          </div>
+          
+          <div style="display:flex; align-items:center; gap:10px;">
+              <input type="range" id="timeSlider" min="0" max="23" value="12" step="1" oninput="updateTimeDisplay()" style="flex-grow:1;">
+              <select id="minSelect" onchange="updateTimeDisplay()" style="width: auto; padding: 8px; border-radius:10px; border:2px solid #FFD8A8; font-weight:bold; color:#e65100;">
+                  <option value="00">:00</option>
+                  <option value="05">:05</option>
+                  <option value="10">:10</option>
+                  <option value="15">:15 (y cuarto)</option>
+                  <option value="20">:20</option>
+                  <option value="30">:30 (y media)</option>
+                  <option value="40">:40</option>
+              </select>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; font-size:12px; color:#aaa; font-weight:bold; margin-top:5px;">
+            <span>00:00</span>
+            <span>12:00</span>
+            <span>23:00</span>
+          </div>
+        </div>
+
+        <button class="action-btn" onclick="buildAndSpeak()">🔊 Generate & Speak</button>
+
+        <div id="result-box">
+          <span id="resSp" class="res-sp"></span>
+          <span id="resEn" class="res-en"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story Time (Bottom of Vocabulario) -->
+    <div class="card" style="text-align:center; margin-top: 30px;">
+      <h2>📖 Story Time (Reading & Listening)</h2>
+      <p style="color:#666; margin-bottom:10px; font-size:0.9em;">
+        Read the English sentence and translate it to Spanish! Tap the card to check your answer.
+      </p>
+
+      <div style="margin-bottom: 20px;">
+        <button class="story-choice-btn active" id="btn-story-yo" onclick="switchStoryMode('yo')">🙋 Yo (I)</button>
+        <button class="story-choice-btn" id="btn-story-ana" onclick="switchStoryMode('ana')">👧 Ana (She)</button>
+      </div>
+
+      <div class="flashcard-scene" onclick="flipStoryCard()">
+        <div class="flashcard" id="storyCardElement">
+          
+          <div class="card-face card-front">
+            <span class="fc-icon" style="font-size: 35px;">🇺🇸</span>
+            <span class="fc-word" id="storyEn" style="font-size: 18px; padding: 0 10px;">Hello, good morning. I am...</span>
+            <span class="fc-hint">Tap to see Spanish ↻</span>
+          </div>
+          
+          <div class="card-face card-back" style="background:#2e7d32; border-color:#1b5e20;">
+            <button class="audio-btn-small" onclick="event.stopPropagation(); playStoryAudio()" style="color:#2e7d32;">🔊</button>
+            <span class="fc-word" id="storyEs" style="font-size: 18px; padding: 0 10px;">Hola, buenos días. Soy ...</span>
+            <span class="fc-sub" style="color: #a5d6a7;">Español</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <button class="story-nav-btn" onclick="prevStorySentence()">⬅️ Back</button>
+        <button class="story-nav-btn" onclick="nextStorySentence()">Next ➔</button>
+      </div>
+      
+      <p style="margin-top:20px; font-size:12px; color:#aaa;">
+        Sentence <span id="storyCount">1</span> / <span id="totalStory">14</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- PAGE 4: POESÍA (READING POETRY) -->
+  <div id="poesia" class="section-content">
+    
+    <!-- Poetry Navigation Sub-Tabs -->
+    <div class="sub-nav-tabs">
+      <button class="poem-tab-btn active" id="btn-poem-lorca" onclick="switchPoemTab('lorca')">🦋 1. Mariposa del aire (F. G. Lorca)</button>
+      <button class="poem-tab-btn" id="btn-poem-mistral" onclick="switchPoemTab('mistral')">🤝 2. Dame la mano (Gabriela Mistral)</button>
+    </div>
+
+    <!-- SUB-PAGE 1: MARIPOSA DEL AIRE (LORCA) -->
+    <div id="poem-sub-lorca" class="poem-sub-content active">
+      
+      <!-- Poem Card -->
+      <div class="card">
+        <h2>🦋 Lectura de Poesía: Mariposa del aire</h2>
+        
+        <!-- Author Introduction Box -->
+        <div style="background: #FFF3E0; padding: 18px 22px; border-radius: 12px; border-left: 5px solid #FF9800; margin-bottom: 25px;">
+          <h3 style="margin-top:0; color:#e65100; border-bottom:none; font-size: 1.25em;">✍️ Autor: Federico García Lorca (Spain, 1898–1936)</h3>
+          <p style="margin: 0; color: #444; line-height: 1.6;">
+            <strong>Federico García Lorca</strong> was one of the most celebrated Spanish poets and playwrights. 
+            This poem is adored by children for its playful rhythm, bright rhymes, and vivid imagery of a butterfly dancing freely in the air.
+          </p>
+        </div>
+
+        <!-- Bilingual Stanzas Grid -->
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px;">
+          <!-- Left: Spanish (Clickable to read) -->
+          <div style="flex: 1; min-width: 300px; background: #FFFDF9; border: 2px solid #FFD8A8; border-radius: 15px; padding: 22px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 2px dashed #FFD8A8; padding-bottom: 10px;">
+              <h4 style="margin:0; color: #e65100; font-size: 1.25em;">🇪🇸 En Español (Click to Listen)</h4>
+              <button class="action-btn" style="margin:0; padding: 8px 18px; font-size: 14px; width: auto; border-radius: 20px; box-shadow: none;" onclick="speakPoem()">🔊 Todo el poema</button>
+            </div>
+
+            <div class="poem-stanza" onclick="speak('Mariposa del aire, qué hermosa eres, mariposa del aire dorada y verde.')">
+              <strong>Mariposa del aire,</strong><br>
+              <strong>qué hermosa eres,</strong><br>
+              <strong>mariposa del aire</strong><br>
+              <strong>dorada y verde.</strong>
+            </div>
+
+            <div class="poem-stanza" onclick="speak('Luz de candil, mariposa del aire, ¡quédate ahí, ahí, ahí!')">
+              <strong>Luz de candil,</strong><br>
+              <strong>mariposa del aire,</strong><br>
+              <strong>¡quédate ahí, ahí, ahí!</strong>
+            </div>
+
+            <div class="poem-stanza" onclick="speak('No te quieres parar, pararte no quieres. Mariposa del aire dorada y verde.')">
+              <strong>No te quieres parar,</strong><br>
+              <strong>pararte no quieres.</strong><br>
+              <strong>Mariposa del aire</strong><br>
+              <strong>dorada y verde...</strong>
+            </div>
+
+            <div class="poem-stanza" onclick="speak('Luz de candil, mariposa del aire, ¡quédate ahí, ahí, ahí! ¡Quédate ahí! Mariposa, ¿estás ahí?')">
+              <strong>Luz de candil...</strong><br>
+              <strong>Mariposa del aire,</strong><br>
+              <strong>¡quédate ahí, ahí, ahí!</strong><br>
+              <strong>¡Quédate ahí!</strong><br>
+              <strong>Mariposa, ¿estás ahí?</strong>
+            </div>
+
+            <p style="font-size: 0.85em; color: #888; font-style: italic; margin-top: 10px; margin-bottom: 0;">
+              💡 <em>Tip: Tap each stanza to hear native Spanish pronunciation.</em>
+            </p>
+          </div>
+
+          <!-- Right: English Translation -->
+          <div style="flex: 1; min-width: 300px; background: #F8FBFD; border: 2px solid #BBDEFB; border-radius: 15px; padding: 22px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 2px dashed #BBDEFB; padding-bottom: 10px;">
+              <h4 style="margin:0; color: #1565C0; font-size: 1.25em;">🇬🇧 English Translation</h4>
+              <span style="font-size: 0.9em; color: #1976D2; font-weight: bold;">Parallel Text</span>
+            </div>
+
+            <div class="poem-stanza-en">
+              Butterfly of the air,<br>
+              how beautiful you are,<br>
+              butterfly of the air,<br>
+              golden and green.
+            </div>
+
+            <div class="poem-stanza-en">
+              Light of the oil lamp,<br>
+              butterfly of the air,<br>
+              stay there, there, there!
+            </div>
+
+            <div class="poem-stanza-en">
+              You don't want to stop,<br>
+              stopping you don't want.<br>
+              Butterfly of the air,<br>
+              golden and green...
+            </div>
+
+            <div class="poem-stanza-en">
+              Light of the oil lamp...<br>
+              Butterfly of the air,<br>
+              stay there, there, there!<br>
+              Stay there!<br>
+              Butterfly, are you there?
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Poem Vocabulary (Spanish - English) Fully Aligned -->
+      <div class="card">
+        <h2>📖 Vocabulario del Poema (Poem Vocabulary: Spanish - English)</h2>
+        <p style="color:#666; margin-bottom: 20px;">
+          Click any word card to listen to the exact pronunciation:
+        </p>
+
+        <div class="vocab-grid">
+          <div class="vocab-card" onclick="speak('la mariposa')">
+            <span class="emoji">🦋</span>
+            <span class="es-text">la mariposa</span>
+            <span class="en-text">butterfly</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('el aire')">
+            <span class="emoji">💨</span>
+            <span class="es-text">el aire</span>
+            <span class="en-text">air / breeze</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('hermoso, hermosa')">
+            <span class="emoji">✨</span>
+            <span class="es-text">hermoso / hermosa</span>
+            <span class="en-text">beautiful / lovely</span>
+            <span class="sub-note">en el poema: hermosa</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('dorado, dorada')">
+            <span class="emoji">🪙</span>
+            <span class="es-text">dorado / dorada</span>
+            <span class="en-text">golden (from oro: gold)</span>
+            <span class="sub-note">en el poema: dorada</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('verde')">
+            <span class="emoji">🌿</span>
+            <span class="es-text">verde</span>
+            <span class="en-text">green</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('la luz')">
+            <span class="emoji">💡</span>
+            <span class="es-text">la luz</span>
+            <span class="en-text">light</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('el candil')">
+            <span class="emoji">🪔</span>
+            <span class="es-text">el candil</span>
+            <span class="en-text">oil lamp / lantern</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('¡Quédate ahí!')">
+            <span class="emoji">🛑</span>
+            <span class="es-text">¡Quédate ahí!</span>
+            <span class="en-text">stay there!</span>
+            <span class="sub-note">verbo: quedarse</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('ahí')">
+            <span class="emoji">📍</span>
+            <span class="es-text">ahí</span>
+            <span class="en-text">there</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('parar, pararse')">
+            <span class="emoji">⏸️</span>
+            <span class="es-text">parar / pararse</span>
+            <span class="en-text">to stop / halt</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('querer, quieres')">
+            <span class="emoji">🏃</span>
+            <span class="es-text">querer (quieres)</span>
+            <span class="en-text">to want (you want)</span>
+            <span class="sub-note">No te quieres parar.</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('¿Estás ahí?')">
+            <span class="emoji">👀</span>
+            <span class="es-text">¿Estás ahí?</span>
+            <span class="en-text">Are you there?</span>
+            <span class="sub-note">verbo: estar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXCLAMATORY SENTENCES (¡Qué hermosa eres!) - FEMININE FIRST -->
+      <div class="card">
+        <h2>✨ Expresiones Exclamativas: ¡Qué + Adjetivo + Eres! (How... you are!)</h2>
+        <p style="color:#666; margin-bottom: 15px;">
+          From the poetic line <em>"qué hermosa eres"</em> (how beautiful you are!), practice complimenting someone with the structure: <strong>¡Qué + [adjetivo] + (eres)!</strong> 
+          *(Primary display uses the <strong>feminine form</strong> matching the butterfly <em>la mariposa</em>, with masculine forms noted below)*.
+        </p>
+
+        <div class="grammar-note">
+          <strong>💡 Grammar Pattern:</strong><br>
+          <span style="color:#e65100; font-weight:900; font-size:1.1em;">¡Qué + Adjective + eres!</span> = <em>How [adjective] you are! / You are so [adjective]!</em><br>
+          <ul>
+            <li>Adjectives ending in <strong>-o/-a</strong> change gender: <strong>¡Qué hermosa eres!</strong> (f.) / <strong>¡Qué hermoso eres!</strong> (m.)</li>
+            <li>Adjectives ending in <strong>-or/-ora</strong>: <strong>¡Qué trabajadora eres!</strong> (f.) / <strong>¡Qué trabajador eres!</strong> (m.)</li>
+            <li>Adjectives ending in <strong>-e</strong> or consonants stay the same: <strong>¡Qué inteligente eres!</strong> | <strong>¡Qué amable eres!</strong></li>
+          </ul>
+        </div>
+
+        <div class="vocab-grid" style="margin-top: 20px;">
+          <!-- 1. Hermosa (Feminine) -->
+          <div class="vocab-card" onclick="speak('¡Qué hermosa eres!')">
+            <span class="emoji">🌸</span>
+            <span class="es-text">¡Qué hermosa eres!</span>
+            <span class="en-text">How beautiful you are!</span>
+            <span class="sub-note">(m: ¡Qué hermoso eres!)</span>
+          </div>
+
+          <!-- 2. Lista (Feminine first) -->
+          <div class="vocab-card" onclick="speak('¡Qué lista eres!')">
+            <span class="emoji">💡</span>
+            <span class="es-text">¡Qué lista eres!</span>
+            <span class="en-text">You are so clever!</span>
+            <span class="sub-note">(m: ¡Qué listo eres!)</span>
+          </div>
+
+          <!-- 3. Trabajadora (Feminine first) -->
+          <div class="vocab-card" onclick="speak('¡Qué trabajadora eres!')">
+            <span class="emoji">🐝</span>
+            <span class="es-text">¡Qué trabajadora eres!</span>
+            <span class="en-text">You are so hardworking!</span>
+            <span class="sub-note">(m: ¡Qué trabajador eres!)</span>
+          </div>
+
+          <!-- 4. Divertida (Feminine first) -->
+          <div class="vocab-card" onclick="speak('¡Qué divertida eres!')">
+            <span class="emoji">😄</span>
+            <span class="es-text">¡Qué divertida eres!</span>
+            <span class="en-text">You are so fun!</span>
+            <span class="sub-note">(m: ¡Qué divertido eres!)</span>
+          </div>
+
+          <!-- 5. Rápida (Feminine first) -->
+          <div class="vocab-card" onclick="speak('¡Qué rápida eres!')">
+            <span class="emoji">⚡</span>
+            <span class="es-text">¡Qué rápida eres!</span>
+            <span class="en-text">You are so fast!</span>
+            <span class="sub-note">(m: ¡Qué rápido eres!)</span>
+          </div>
+
+          <!-- 6. Buena (Feminine first) -->
+          <div class="vocab-card" onclick="speak('¡Qué buena eres!')">
+            <span class="emoji">🌟</span>
+            <span class="es-text">¡Qué buena eres!</span>
+            <span class="en-text">You are so good / wonderful!</span>
+            <span class="sub-note">(m: ¡Qué bueno eres!)</span>
+          </div>
+
+          <!-- 7. Inteligente (Both) -->
+          <div class="vocab-card" onclick="speak('¡Qué inteligente eres!')">
+            <span class="emoji">🧠</span>
+            <span class="es-text">¡Qué inteligente eres!</span>
+            <span class="en-text">You are so smart!</span>
+            <span class="sub-note">(same for m. and f.)</span>
+          </div>
+
+          <!-- 8. Amable (Both) -->
+          <div class="vocab-card" onclick="speak('¡Qué amable eres!')">
+            <span class="emoji">💖</span>
+            <span class="es-text">¡Qué amable eres!</span>
+            <span class="en-text">You are so kind!</span>
+            <span class="sub-note">(same for m. and f.)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESTAR FOR LOCATION & STATE (¿Cómo estás? & ¿Dónde estás?) -->
+      <div class="card">
+        <h2>📍🎭 El Verbo ESTAR: Estado y Ubicación (State & Location: ¿Cómo estás? / ¿Dónde estás?)</h2>
+        <p style="color:#666; margin-bottom: 15px;">
+          From the poetic line <em>"Mariposa, ¿estás ahí?"</em> (Butterfly, are you there?) and our greeting <em>"¿Cómo estás?"</em> (How are you?), remember that <strong>estar</strong> connects both <strong>how you feel (state)</strong> and <strong>where you are (location)</strong>!
+        </p>
+
+        <div class="grammar-note">
+          <strong>💡 Golden Rule: The Two Core Uses of ESTAR (vs. SER for Identity):</strong><br>
+          While <strong>Ser</strong> is used for permanent identity and traits (<em>Soy estudiante, Eres hermosa</em>), <strong>Estar</strong> has two essential functions:<br>
+          <ul>
+            <li><strong>1. 🎭 Estado / Emoción (Feelings & Temporary States) — ¿Cómo estás? (How are you?):</strong><br>
+            Used to express moods, feelings, and physical or mental states.<br>
+            <em>Examples:</em> <strong>Estoy bien</strong> (I am fine) | <strong>Estoy muy feliz</strong> (I am very happy) | <strong>Estoy cansado/a</strong> (I am tired) | <strong>Estoy triste</strong> (I am sad).</li>
+            <li><strong>2. 📍 Ubicación / Lugar (Location & Position) — ¿Dónde estás? / ¿Estás ahí? (Where are you?):</strong><br>
+            Used to indicate the exact place where someone or something is located.<br>
+            <em>Examples:</em> <strong>Estoy en casa</strong> (I am at home) | <strong>Estoy en la escuela</strong> (I am at school) | <strong>Estoy aquí</strong> (I am here) | <strong>¿Estás ahí?</strong> (Are you there?).</li>
+          </ul>
+        </div>
+
+        <!-- 1. STATES REVIEW -->
+        <h3 style="color:#e65100; margin-top:25px;">🎭 1. ESTAR + Estado / Emoción (Review: ¿Cómo estás? — How are you?)</h3>
+        <p style="color:#666; font-size:0.95em; margin-bottom:15px;">
+          Review how to ask and answer about feelings and states using <strong>estás / estoy / está</strong>:
+        </p>
+        <div class="vocab-grid">
+          <div class="vocab-card" onclick="speak('¿Cómo estás?')">
+            <span class="emoji">🤔</span>
+            <span class="es-text">¿Cómo estás?</span>
+            <span class="en-text">How are you?</span>
+            <span class="sub-note">cómo = how (state)</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('Estoy muy bien')">
+            <span class="emoji">😊</span>
+            <span class="es-text">Estoy muy bien</span>
+            <span class="en-text">I am very well</span>
+            <span class="sub-note">bien = well / fine</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('Estoy feliz')">
+            <span class="emoji">😄</span>
+            <span class="es-text">Estoy feliz</span>
+            <span class="en-text">I am happy</span>
+            <span class="sub-note">same for m. & f.</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('Estoy contento, Estoy contenta')">
+            <span class="emoji">🥰</span>
+            <span class="es-text">Estoy contento(a)</span>
+            <span class="en-text">I am glad / happy</span>
+            <span class="sub-note">-o (m.) / -a (f.)</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('Estoy cansado, Estoy cansada')">
+            <span class="emoji">🥱</span>
+            <span class="es-text">Estoy cansado(a)</span>
+            <span class="en-text">I am tired</span>
+            <span class="sub-note">-o (m.) / -a (f.)</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('Estoy triste')">
+            <span class="emoji">😢</span>
+            <span class="es-text">Estoy triste</span>
+            <span class="en-text">I am sad</span>
+            <span class="sub-note">same for m. & f.</span>
+          </div>
+        </div>
+
+        <!-- 2. LOCATIONS -->
+        <h3 style="color:#e65100; margin-top:30px;">📍 2. ESTAR + Ubicación / Lugar (Location: ¿Dónde estás? — I am at...)</h3>
+        <p style="color:#666; font-size:0.95em; margin-bottom:15px;">
+          Use <strong>Estoy en...</strong> (I am in/at...) or adverbs like <strong>aquí</strong> (here) and <strong>ahí</strong> (there) to tell where you are:
+        </p>
+        <div class="vocab-grid">
+          <!-- 1. Estoy en casa -->
+          <div class="vocab-card" onclick="speak('Estoy en casa')">
+            <span class="emoji">🏠</span>
+            <span class="es-text">Estoy en casa</span>
+            <span class="en-text">I am at home</span>
+            <span class="sub-note">en casa</span>
+          </div>
+
+          <!-- 2. Estoy aquí -->
+          <div class="vocab-card" onclick="speak('Estoy aquí')">
+            <span class="emoji">👇</span>
+            <span class="es-text">Estoy aquí</span>
+            <span class="en-text">I am here</span>
+            <span class="sub-note">aquí = here</span>
+          </div>
+
+          <!-- 3. Estoy en mi habitación -->
+          <div class="vocab-card" onclick="speak('Estoy en mi habitación')">
+            <span class="emoji">🛏️</span>
+            <span class="es-text">Estoy en mi habitación</span>
+            <span class="en-text">I am in my room</span>
+            <span class="sub-note">mi habitación</span>
+          </div>
+
+          <!-- 4. Estoy en la escuela -->
+          <div class="vocab-card" onclick="speak('Estoy en la escuela')">
+            <span class="emoji">🏫</span>
+            <span class="es-text">Estoy en la escuela</span>
+            <span class="en-text">I am at school</span>
+            <span class="sub-note">en la escuela</span>
+          </div>
+
+          <!-- 5. Estoy en la biblioteca -->
+          <div class="vocab-card" onclick="speak('Estoy en la biblioteca')">
+            <span class="emoji">📚</span>
+            <span class="es-text">Estoy en la biblioteca</span>
+            <span class="en-text">I am at the library</span>
+            <span class="sub-note">en la biblioteca</span>
+          </div>
+
+          <!-- 6. Estoy en el parque -->
+          <div class="vocab-card" onclick="speak('Estoy en el parque')">
+            <span class="emoji">🌳</span>
+            <span class="es-text">Estoy en el parque</span>
+            <span class="en-text">I am in the park</span>
+            <span class="sub-note">en el parque</span>
+          </div>
+
+          <!-- 7. Estoy en la oficina -->
+          <div class="vocab-card" onclick="speak('Estoy en la oficina')">
+            <span class="emoji">💼</span>
+            <span class="es-text">Estoy en la oficina</span>
+            <span class="en-text">I am at the office</span>
+            <span class="sub-note">en la oficina</span>
+          </div>
+
+          <!-- 8. Estoy en clase -->
+          <div class="vocab-card" onclick="speak('Estoy en clase')">
+            <span class="emoji">🎒</span>
+            <span class="es-text">Estoy en clase</span>
+            <span class="en-text">I am in class</span>
+            <span class="sub-note">en clase</span>
+          </div>
+        </div>
+
+        <!-- 3. QUESTIONS & OTHER PRONOUNS -->
+        <h3 style="color:#1565C0; margin-top:30px;">❓ 3. Preguntas Clave y Otras Personas (Key Questions & Other Pronouns)</h3>
+        <div class="vocab-grid">
+          <!-- ¿Cómo estás? -->
+          <div class="vocab-card" onclick="speak('¿Cómo estás?')">
+            <span class="emoji">🎭</span>
+            <span class="es-text">¿Cómo estás?</span>
+            <span class="en-text">How are you?</span>
+            <span class="sub-note">Pregunta por estado</span>
+          </div>
+
+          <!-- ¿Dónde estás? -->
+          <div class="vocab-card" onclick="speak('¿Dónde estás?')">
+            <span class="emoji">🗺️</span>
+            <span class="es-text">¿Dónde estás?</span>
+            <span class="en-text">Where are you?</span>
+            <span class="sub-note">Pregunta por lugar</span>
+          </div>
+
+          <!-- ¿Estás ahí? -->
+          <div class="vocab-card" onclick="speak('¿Estás ahí?')">
+            <span class="emoji">👀</span>
+            <span class="es-text">¿Estás ahí?</span>
+            <span class="en-text">Are you there?</span>
+            <span class="sub-note">ahí = there</span>
+          </div>
+
+          <!-- Está feliz en el parque -->
+          <div class="vocab-card" onclick="speak('Está feliz en el parque')">
+            <span class="emoji">🦋</span>
+            <span class="es-text">Está feliz en el parque</span>
+            <span class="en-text">He/She is happy in the park</span>
+            <span class="sub-note">él / ella está</span>
+          </div>
+
+          <!-- Está en la escuela -->
+          <div class="vocab-card" onclick="speak('Está en la escuela')">
+            <span class="emoji">🏫</span>
+            <span class="es-text">Está en la escuela</span>
+            <span class="en-text">He/She is at school</span>
+            <span class="sub-note">él / ella está</span>
+          </div>
+
+          <!-- Estamos bien aquí -->
+          <div class="vocab-card" onclick="speak('Estamos bien aquí')">
+            <span class="emoji">👥</span>
+            <span class="es-text">Estamos bien aquí</span>
+            <span class="en-text">We are fine here</span>
+            <span class="sub-note">nosotros estamos</span>
+          </div>
+        </div>
+
+        <!-- 4. COMBINED DIALOGUE: ¿CÓMO ESTÁS? + ¿DÓNDE ESTÁS? -->
+        <div style="background: #E3F2FD; padding: 25px; border-radius: 14px; border-left: 6px solid #1565C0; margin-top: 30px;">
+          <h4 style="color:#0D47A1; margin-top:0; font-size:1.35em;">💬 Diálogo Integrado: ¿Cómo estás? y ¿Dónde estás? (State + Location in One Conversation)</h4>
+          <p style="font-size:1.05em; color:#333; margin-bottom: 18px;">
+            See how <strong>¿Cómo estás?</strong> (state) and <strong>¿Dónde estás?</strong> (location) naturally work together in a single conversation! Click each turn to listen, or click the button to hear the whole dialogue:
+          </p>
+
+          <!-- Scenario 1: Full Multi-turn Phone/Chat Conversation -->
+          <div style="background: #ffffff; border: 2px solid #90CAF9; border-radius: 12px; padding: 18px; margin-bottom: 20px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px; border-bottom:1px dashed #BBDEFB; padding-bottom:10px;">
+              <strong style="color:#1565C0; font-size:1.1em;">📱 Escena 1: Una llamada entre amigos (A Call Between Friends)</strong>
+              <button class="action-btn" style="margin:0; padding: 6px 16px; font-size: 13.5px; width: auto; border-radius: 20px; box-shadow: none; background:#1565C0;" onclick="speak('¡Hola, Ana! ¿Estás ahí? ¿Cómo estás? ¡Hola! Sí, estoy aquí. Estoy muy bien y muy feliz, gracias. ¿Y tú, cómo estás? Yo estoy un poco cansada, pero estoy bien. Oye, ¿dónde estás ahora? Ahora estoy en el parque. ¡Veo una mariposa dorada y verde! ¿Y dónde estás tú? Yo estoy en casa, en mi habitación. ¡Voy al parque ahora!')">🔊 Escuchar todo el diálogo</button>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <button style="background:#F8FBFD; border:1px solid #BBDEFB; border-radius:10px; padding:12px 15px; cursor:pointer; text-align:left; color:#333; font-size:1.02em; transition: 0.2s;" onmouseover="this.style.background='#E3F2FD'" onmouseout="this.style.background='#F8FBFD'" onclick="speak('¡Hola, Ana! ¿Estás ahí? ¿Cómo estás?')">
+                <strong style="color:#1565C0;">👧 Sofía:</strong> ¡Hola, Ana! <strong>¿Estás ahí?</strong> <strong>¿Cómo estás?</strong><br>
+                <span style="color:#666; font-size:0.9em;">(Hello, Ana! Are you there? [Location] How are you? [State])</span>
+              </button>
+
+              <button style="background:#FFFDF9; border:1px solid #FFE0B2; border-radius:10px; padding:12px 15px; cursor:pointer; text-align:left; color:#333; font-size:1.02em; transition: 0.2s;" onmouseover="this.style.background='#FFF3E0'" onmouseout="this.style.background='#FFFDF9'" onclick="speak('¡Hola! Sí, estoy aquí. Estoy muy bien y muy feliz, gracias. ¿Y tú, cómo estás?')">
+                <strong style="color:#e65100;">👧 Ana:</strong> ¡Hola! Sí, <strong>estoy aquí</strong>. <strong>Estoy muy bien y muy feliz</strong>, gracias. ¿Y tú, <strong>cómo estás</strong>?<br>
+                <span style="color:#666; font-size:0.9em;">(Hello! Yes, I am here [Location]. I am very well and very happy [State], thank you. And you, how are you?)</span>
+              </button>
+
+              <button style="background:#F8FBFD; border:1px solid #BBDEFB; border-radius:10px; padding:12px 15px; cursor:pointer; text-align:left; color:#333; font-size:1.02em; transition: 0.2s;" onmouseover="this.style.background='#E3F2FD'" onmouseout="this.style.background='#F8FBFD'" onclick="speak('Yo estoy un poco cansada, pero estoy bien. Oye, ¿dónde estás ahora?')">
+                <strong style="color:#1565C0;">👧 Sofía:</strong> Yo <strong>estoy un poco cansada</strong>, pero <strong>estoy bien</strong>. Oye, <strong>¿dónde estás</strong> ahora?<br>
+                <span style="color:#666; font-size:0.9em;">(I am a bit tired [State], but I am fine [State]. Hey, where are you now? [Location])</span>
+              </button>
+
+              <button style="background:#FFFDF9; border:1px solid #FFE0B2; border-radius:10px; padding:12px 15px; cursor:pointer; text-align:left; color:#333; font-size:1.02em; transition: 0.2s;" onmouseover="this.style.background='#FFF3E0'" onmouseout="this.style.background='#FFFDF9'" onclick="speak('Ahora estoy en el parque. ¡Veo una mariposa dorada y verde! ¿Y dónde estás tú?')">
+                <strong style="color:#e65100;">👧 Ana:</strong> Ahora <strong>estoy en el parque</strong>. ¡Veo una mariposa dorada y verde! ¿Y <strong>dónde estás</strong> tú?<br>
+                <span style="color:#666; font-size:0.9em;">(Now I am in the park [Location]. I see a golden and green butterfly! And where are you? [Location])</span>
+              </button>
+
+              <button style="background:#F8FBFD; border:1px solid #BBDEFB; border-radius:10px; padding:12px 15px; cursor:pointer; text-align:left; color:#333; font-size:1.02em; transition: 0.2s;" onmouseover="this.style.background='#E3F2FD'" onmouseout="this.style.background='#F8FBFD'" onclick="speak('Yo estoy en casa, en mi habitación. ¡Voy al parque ahora!')">
+                <strong style="color:#1565C0;">👧 Sofía:</strong> Yo <strong>estoy en casa</strong>, <strong>en mi habitación</strong>. ¡Voy al parque ahora!<br>
+                <span style="color:#666; font-size:0.9em;">(I am at home, in my room [Location]. I am going to the park now!)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Scenario 2: Quick 2-turn Mini-Dialogues Combining Both Questions -->
+          <strong style="color:#0D47A1; display:block; margin-bottom:10px; font-size:1.05em;">⚡ Práctica Rápida: Las dos preguntas juntas (Quick Practice: Both Questions Together)</strong>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <button style="background:white; border:2px solid #64B5F6; border-radius:12px; padding:14px; cursor:pointer; text-align:left; color:#333; font-size:1.02em; transition: 0.2s;" onmouseover="this.style.background='#F1F8E9'" onmouseout="this.style.background='white'" onclick="speak('¡Hola! ¿Cómo estás y dónde estás? Estoy muy feliz y estoy en la escuela.')">
+              <strong style="color:#1565C0;">A:</strong> ¡Hola! <strong>¿Cómo estás</strong> y <strong>dónde estás?</strong> <span style="color:#666; font-size:0.9em;">(Hello! How are you and where are you?)</span><br>
+              <strong style="color:#e65100;">B:</strong> <strong>Estoy muy feliz</strong> (🎭 estado) y <strong>estoy en la escuela</strong> (📍 lugar). <span style="color:#666; font-size:0.9em;">(I am very happy and I am at school.)</span>
+            </button>
+
+            <button style="background:white; border:2px solid #64B5F6; border-radius:12px; padding:14px; cursor:pointer; text-align:left; color:#333; font-size:1.02em; transition: 0.2s;" onmouseover="this.style.background='#F1F8E9'" onmouseout="this.style.background='white'" onclick="speak('Mariposa, ¿estás ahí? ¿Cómo estás y dónde estás? ¡Estoy aquí! Estoy muy contenta y estoy en el aire.')">
+              <strong style="color:#1565C0;">A:</strong> Mariposa, <strong>¿estás ahí?</strong> <strong>¿Cómo estás</strong> y <strong>dónde estás?</strong> <span style="color:#666; font-size:0.9em;">(Butterfly, are you there? How are you and where are you?)</span><br>
+              <strong style="color:#e65100;">B (🦋):</strong> ¡<strong>Estoy aquí</strong>! <strong>Estoy muy contenta</strong> (🎭 estado) y <strong>estoy en el aire</strong> (📍 lugar). <span style="color:#666; font-size:0.9em;">(I am here! I am very happy and I am in the air.)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SUB-PAGE 2: DAME LA MANO (GABRIELA MISTRAL) -->
+    <div id="poem-sub-mistral" class="poem-sub-content">
+      
+      <!-- Poem Card -->
+      <div class="card">
+        <h2>🤝 Lectura de Poesía: Dame la mano</h2>
+        
+        <!-- Author Introduction Box -->
+        <div style="background: #E8F5E9; padding: 18px 22px; border-radius: 12px; border-left: 5px solid #2e7d32; margin-bottom: 25px;">
+          <h3 style="margin-top:0; color:#1b5e20; border-bottom:none; font-size: 1.25em;">✍️ Autora: Gabriela Mistral (Chile, 1889–1957)</h3>
+          <p style="margin: 0; color: #333; line-height: 1.6;">
+            <strong>Gabriela Mistral</strong> was an extraordinary Chilean poet, teacher, and diplomat, and the <strong>first Latin American author to receive the Nobel Prize in Literature (1945)</strong>. 
+            <em>«Dame la mano»</em> is one of her most beloved children's round-dance poems (rondas infantiles), celebrating friendship, universal love, and dancing together as one in nature.
+          </p>
+        </div>
+
+        <!-- Bilingual Stanzas Grid (Full 3 Stanzas) -->
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+          <!-- Left: Spanish (Clickable to read) -->
+          <div style="flex: 1; min-width: 300px; background: #FFFDF9; border: 2px solid #A5D6A7; border-radius: 15px; padding: 22px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 2px dashed #A5D6A7; padding-bottom: 10px;">
+              <h4 style="margin:0; color: #2e7d32; font-size: 1.25em;">🇪🇸 Dame la mano (Click to Listen)</h4>
+              <button class="action-btn" style="margin:0; padding: 8px 18px; font-size: 14px; width: auto; border-radius: 20px; box-shadow: none; background: #2e7d32;" onclick="speakMistralPoemFull()">🔊 Toda la poesía</button>
+            </div>
+
+            <!-- Stanza 1 -->
+            <div class="poem-stanza" style="border-left-color: #2e7d32;" onclick="speak('Dame la mano y danzaremos; dame la mano y me amarás. Como una sola flor seremos, como una flor, y nada más.')">
+              <strong>Dame la mano y danzaremos;</strong><br>
+              <strong>dame la mano y me amarás.</strong><br>
+              <strong>Como una sola flor seremos,</strong><br>
+              <strong>como una flor, y nada más.</strong>
+            </div>
+
+            <!-- Stanza 2 -->
+            <div class="poem-stanza" style="border-left-color: #2e7d32;" onclick="speak('El mismo verso cantaremos, al mismo paso bailarás. Como una espiga ondularemos, como una espiga, y nada más.')">
+              <strong>El mismo verso cantaremos,</strong><br>
+              <strong>al mismo paso bailarás.</strong><br>
+              <strong>Como una espiga ondularemos,</strong><br>
+              <strong>como una espiga, y nada más.</strong>
+            </div>
+
+            <!-- Stanza 3 -->
+            <div class="poem-stanza" style="border-left-color: #2e7d32;" onclick="speak('Te llamas Rosa y yo Esperanza; pero tu nombre olvidarás, porque seremos una danza en la colina y nada más.')">
+              <strong>Te llamas Rosa y yo Esperanza;</strong><br>
+              <strong>pero tu nombre olvidarás,</strong><br>
+              <strong>porque seremos una danza</strong><br>
+              <strong>en la colina y nada más.</strong>
+            </div>
+
+            <p style="font-size: 0.85em; color: #666; font-style: italic; margin-top: 15px; margin-bottom: 0;">
+              💡 <em>Tip: Tap each stanza to hear native Spanish pronunciation.</em>
+            </p>
+          </div>
+
+          <!-- Right: English Translation (Ursula K. Le Guin) -->
+          <div style="flex: 1; min-width: 300px; background: #F8FBFD; border: 2px solid #BBDEFB; border-radius: 15px; padding: 22px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; border-bottom: 2px dashed #BBDEFB; padding-bottom: 10px;">
+              <h4 style="margin:0; color: #1565C0; font-size: 1.25em;">🇬🇧 Give Me Your Hand</h4>
+              <span style="font-size: 0.85em; color: #1976D2; font-weight: bold;">Trans. Ursula K. Le Guin</span>
+            </div>
+
+            <!-- Stanza 1 EN -->
+            <div class="poem-stanza-en">
+              Give me your hand and give me your love,<br>
+              give me your hand and dance with me.<br>
+              A single flower, and nothing more,<br>
+              a single flower is all we'll be.
+            </div>
+
+            <!-- Stanza 2 EN -->
+            <div class="poem-stanza-en">
+              Keeping time in the dance together,<br>
+              singing the tune together with me,<br>
+              grass in the wind, and nothing more,<br>
+              grass in the wind is all we'll be.
+            </div>
+
+            <!-- Stanza 3 EN -->
+            <div class="poem-stanza-en">
+              I'm called Hope and you're called Rose:<br>
+              but losing our names we'll both go free,<br>
+              a dance on the hills, and nothing more,<br>
+              a dance on the hills is all we'll be.
+            </div>
+
+            <p style="font-size: 0.8em; color: #78909c; margin-top: 15px; margin-bottom: 0;">
+              <em>From Selected Poems of Gabriela Mistral: Translated by Ursula K. Le Guin.</em>
+            </p>
+          </div>
+        </div>
+
+        <!-- Translation Comparison Note (Short English Explanation) -->
+        <div style="background: #FFF8E1; border-left: 5px solid #FFA000; border-radius: 12px; padding: 18px 22px; margin-top: 20px;">
+          <h4 style="color: #b78103; margin-top: 0; font-size: 1.15em;">💡 Note on the English Translation by Ursula K. Le Guin:</h4>
+          <p style="color: #444; font-size: 0.95em; line-height: 1.6; margin-bottom: 8px;">
+            To preserve English poetic rhythm and song-like flow, the translator made a few gentle artistic choices:
+          </p>
+          <ul style="color: #555; font-size: 0.9em; line-height: 1.8; margin-top: 5px; padding-left: 20px;">
+            <li><strong>Stanza 1 line switch:</strong> In Spanish, line 1 is <em>danzaremos</em> (dance) and line 2 is <em>me amarás</em> (love me). In English, the order is reversed: <em>"give me your love"</em> first, then <em>"dance with me"</em>.</li>
+            <li><strong>Stanza 2 imagery:</strong> <em>Una espiga</em> is literally an "ear of wheat / stalk", translated poetically as <em>"grass in the wind"</em>. Also, <em>al mismo paso</em> (at the same pace) is expressed as <em>"Keeping time in the dance together"</em>.</li>
+            <li><strong>Stanza 3 poetic freedom:</strong> <em>Pero tu nombre olvidarás</em> (but you will forget your name) is translated poetically as <em>"but losing our names we'll both go free"</em>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ROSA & ESPERANZA EXPLANATION -->
+      <div class="card">
+        <h2>🌹 Meaning of «Rosa» and «Esperanza»</h2>
+        <div class="grammar-note" style="background: #F9FBE7; border-color: #C0CA33; font-size: 1em; line-height: 1.7;">
+          In Stanza 3, the poem says: <strong>«Te llamas Rosa y yo Esperanza»</strong> (<em>You are called Rose and I am Hope</em>).<br>
+          • <strong>Rosa</strong> = <strong>Rose</strong> (the flower of beauty, and also a girl's name).<br>
+          • <strong>Esperanza</strong> = <strong>Hope</strong> (the feeling of optimism, and also a girl's name).<br><br>
+          They are both beautiful names and meaningful words: Rose brings beauty and Hope brings joy. When we hold hands and dance together, we forget our individual names because we all become one joyful dance on the hill!
+        </div>
+      </div>
+
+      <!-- Poem Vocabulary -->
+      <div class="card">
+        <h2>📖 Vocabulario Esencial (Dame la mano)</h2>
+        <p style="color:#666; margin-bottom: 20px;">
+          Click any word card to listen to the pronunciation:
+        </p>
+
+        <div class="vocab-grid">
+          <div class="vocab-card" onclick="speak('la mano')">
+            <span class="emoji">🤝</span>
+            <span class="es-text">la mano</span>
+            <span class="en-text">hand</span>
+            <span class="sub-note">dame la mano</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('dame')">
+            <span class="emoji">🤲</span>
+            <span class="es-text">dame</span>
+            <span class="en-text">give me</span>
+            <span class="sub-note">verbo: dar</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('la flor')">
+            <span class="emoji">🌸</span>
+            <span class="es-text">la flor</span>
+            <span class="en-text">flower</span>
+            <span class="sub-note">como una flor</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('solo, sola')">
+            <span class="emoji">☝️</span>
+            <span class="es-text">solo / sola</span>
+            <span class="en-text">single / only</span>
+            <span class="sub-note">una sola flor</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('nada más')">
+            <span class="emoji">✨</span>
+            <span class="es-text">nada más</span>
+            <span class="en-text">nothing more</span>
+            <span class="sub-note">y nada más</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('el verso')">
+            <span class="emoji">🎶</span>
+            <span class="es-text">el verso</span>
+            <span class="en-text">verse / tune</span>
+            <span class="sub-note">el mismo verso</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('el paso')">
+            <span class="emoji">👣</span>
+            <span class="es-text">el paso</span>
+            <span class="en-text">step / pace</span>
+            <span class="sub-note">al mismo paso</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('la espiga')">
+            <span class="emoji">🌾</span>
+            <span class="es-text">la espiga</span>
+            <span class="en-text">stalk of wheat</span>
+            <span class="sub-note">como una espiga</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('ondular')">
+            <span class="emoji">🌊</span>
+            <span class="es-text">ondular</span>
+            <span class="en-text">to wave / sway</span>
+            <span class="sub-note">ondularemos</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('el nombre')">
+            <span class="emoji">🏷️</span>
+            <span class="es-text">el nombre</span>
+            <span class="en-text">name</span>
+            <span class="sub-note">tu nombre</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('olvidar')">
+            <span class="emoji">💭</span>
+            <span class="es-text">olvidar</span>
+            <span class="en-text">to forget</span>
+            <span class="sub-note">olvidarás</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('la danza')">
+            <span class="emoji">🩰</span>
+            <span class="es-text">la danza</span>
+            <span class="en-text">dance</span>
+            <span class="sub-note">seremos una danza</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('la colina')">
+            <span class="emoji">⛰️</span>
+            <span class="es-text">la colina</span>
+            <span class="en-text">hill</span>
+            <span class="sub-note">en la colina</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('la rosa')">
+            <span class="emoji">🌹</span>
+            <span class="es-text">Rosa</span>
+            <span class="en-text">Rose (beauty)</span>
+            <span class="sub-note">Te llamas Rosa</span>
+          </div>
+
+          <div class="vocab-card" onclick="speak('la esperanza')">
+            <span class="emoji">🕊️</span>
+            <span class="es-text">Esperanza</span>
+            <span class="en-text">Hope (optimism)</span>
+            <span class="sub-note">yo Esperanza</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRACTICAL VERBS: DANZAR & BAILAR (Everyday Present Tense) -->
+      <div class="card">
+        <h2>💃 Verbos Prácticos: «Danzar» y «Bailar» (To Dance)</h2>
+        <p style="color:#666; margin-bottom: 15px;">
+          Practical everyday sentences in the present tense (I dance, you dance, we dance):
+        </p>
+
+        <div class="vocab-grid">
+          <!-- Yo bailo / Yo danzo -->
+          <div class="vocab-card" onclick="speak('Yo bailo')">
+            <span class="emoji">🙋</span>
+            <span class="es-text">Yo bailo</span>
+            <span class="en-text">I dance (daily)</span>
+            <span class="sub-note">Yo danzo (poetic)</span>
+          </div>
+
+          <!-- Tú bailas / Tú danzas -->
+          <div class="vocab-card" onclick="speak('Tú bailas')">
+            <span class="emoji">👉</span>
+            <span class="es-text">Tú bailas</span>
+            <span class="en-text">You dance (daily)</span>
+            <span class="sub-note">Tú danzas (poetic)</span>
+          </div>
+
+          <!-- Nosotros bailamos / Nosotros danzamos -->
+          <div class="vocab-card" onclick="speak('Nosotros bailamos')">
+            <span class="emoji">👥</span>
+            <span class="es-text">Nosotros bailamos</span>
+            <span class="en-text">We dance</span>
+            <span class="sub-note">Nosotros danzamos</span>
+          </div>
+
+          <!-- Bailamos juntos -->
+          <div class="vocab-card" onclick="speak('Bailamos juntos')">
+            <span class="emoji">👯</span>
+            <span class="es-text">Bailamos juntos</span>
+            <span class="en-text">We dance together</span>
+            <span class="sub-note">juntos = together</span>
+          </div>
+        </div>
+
+        <h4 style="color:#2e7d32; margin-top:25px;">💬 Frases para Practicar (Practice Sentences):</h4>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <button style="background:white; border:2px solid #A5D6A7; border-radius:10px; padding:12px 18px; cursor:pointer; text-align:left; font-size:1.05em; transition:0.2s;" onmouseover="this.style.background='#F1F8E9'" onmouseout="this.style.background='white'" onclick="speak('Yo bailo con alegría.')">
+            <strong style="color:#2e7d32;">1.</strong> Yo bailo con alegría. <br>
+            <span style="color:#666; font-size:0.9em;">(I dance with joy.)</span>
+          </button>
+          <button style="background:white; border:2px solid #A5D6A7; border-radius:10px; padding:12px 18px; cursor:pointer; text-align:left; font-size:1.05em; transition:0.2s;" onmouseover="this.style.background='#F1F8E9'" onmouseout="this.style.background='white'" onclick="speak('¿Bailas conmigo?')">
+            <strong style="color:#2e7d32;">2.</strong> ¿Bailas conmigo? <br>
+            <span style="color:#666; font-size:0.9em;">(Will you dance with me?)</span>
+          </button>
+          <button style="background:white; border:2px solid #A5D6A7; border-radius:10px; padding:12px 18px; cursor:pointer; text-align:left; font-size:1.05em; transition:0.2s;" onmouseover="this.style.background='#F1F8E9'" onmouseout="this.style.background='white'" onclick="speak('Nosotros danzamos en la colina.')">
+            <strong style="color:#2e7d32;">3.</strong> Nosotros danzamos en la colina. <br>
+            <span style="color:#666; font-size:0.9em;">(We dance on the hill.)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- PRACTICAL VERB: AMAR (Mamá te amo, Te amo mucho, etc.) -->
+      <div class="card">
+        <h2>❤️ El Verbo AMAR: Cómo Decir «Te amo» (To Love)</h2>
+        <p style="color:#666; margin-bottom: 15px;">
+          From the line <em>«dame la mano y me amarás»</em> (give me your hand and you will love me), learn how to express love with <strong>amar</strong>:
+        </p>
+
+        <div class="grammar-note">
+          <strong>💡 Amar vs. Querer:</strong><br>
+          • <strong>Amar (Te amo)</strong>: Expresses deep, heartfelt love for parents, family, and loved ones (e.g. <em>«Mamá, te amo»</em>).<br>
+          • <strong>Querer (Te quiero)</strong>: Also means "I love you / I care about you" in friendly daily Spanish. Remember we learned <em>«Quiero una hamburguesa»</em> (I want a hamburger) in Page 3!<br>
+          • In the poem: <strong>me amarás</strong> = <em>you will love me</em> (future tense).
+        </div>
+
+        <div class="vocab-grid" style="margin-top: 20px;">
+          <!-- 1. Te amo -->
+          <div class="vocab-card" onclick="speak('Te amo')">
+            <span class="emoji">❤️</span>
+            <span class="es-text">Te amo</span>
+            <span class="en-text">I love you</span>
+            <span class="sub-note">verbo: amar</span>
+          </div>
+
+          <!-- 2. Mamá te amo -->
+          <div class="vocab-card" onclick="speak('Mamá, te amo')">
+            <span class="emoji">👩‍👧</span>
+            <span class="es-text">Mamá, te amo</span>
+            <span class="en-text">Mom, I love you</span>
+            <span class="sub-note">for mother</span>
+          </div>
+
+          <!-- 3. Papá te amo -->
+          <div class="vocab-card" onclick="speak('Papá, te amo')">
+            <span class="emoji">👨‍👧</span>
+            <span class="es-text">Papá, te amo</span>
+            <span class="en-text">Dad, I love you</span>
+            <span class="sub-note">for father</span>
+          </div>
+
+          <!-- 4. Te amo mucho -->
+          <div class="vocab-card" onclick="speak('Te amo mucho')">
+            <span class="emoji">💖</span>
+            <span class="es-text">Te amo mucho</span>
+            <span class="en-text">I love you so much</span>
+            <span class="sub-note">mucho = very much</span>
+          </div>
+
+          <!-- 5. Me amarás (Poema) -->
+          <div class="vocab-card" onclick="speak('Me amarás')">
+            <span class="emoji">✨</span>
+            <span class="es-text">Me amarás</span>
+            <span class="en-text">You will love me</span>
+            <span class="sub-note">in the poem (future)</span>
+          </div>
+
+          <!-- 6. Te quiero -->
+          <div class="vocab-card" onclick="speak('Te quiero')">
+            <span class="emoji">🥰</span>
+            <span class="es-text">Te quiero</span>
+            <span class="en-text">I love you / like you</span>
+            <span class="sub-note">verbo: querer</span>
+          </div>
+        </div>
+
+        <h4 style="color:#e65100; margin-top:25px;">💬 Frases para Practicar (Practice Sentences):</h4>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <button style="background:white; border:2px solid #FFD8A8; border-radius:10px; padding:12px 18px; cursor:pointer; text-align:left; font-size:1.05em; transition:0.2s;" onmouseover="this.style.background='#FFF7ED'" onmouseout="this.style.background='white'" onclick="speak('Mamá, te amo con todo mi corazón.')">
+            <strong style="color:#e65100;">1.</strong> Mamá, te amo con todo mi corazón. <br>
+            <span style="color:#666; font-size:0.9em;">(Mom, I love you with all my heart.)</span>
+          </button>
+          <button style="background:white; border:2px solid #FFD8A8; border-radius:10px; padding:12px 18px; cursor:pointer; text-align:left; font-size:1.05em; transition:0.2s;" onmouseover="this.style.background='#FFF7ED'" onmouseout="this.style.background='white'" onclick="speak('Dame la mano y me amarás.')">
+            <strong style="color:#e65100;">2.</strong> Dame la mano y me amarás. <br>
+            <span style="color:#666; font-size:0.9em;">(Give me your hand and you will love me.)</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  let availableVoices = [];
+
+  function loadVoices() {
+    availableVoices = window.speechSynthesis.getVoices();
+  }
+
+  if ('speechSynthesis' in window) {
+    loadVoices();
+    if (window.speechSynthesis.onvoiceschanged !== undefined) {
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+  }
+
+  /* --- DATA FOR NUMBERS --- */
+  const numbersEs = [
+    "cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez",
+    "once","doce","trece","catorce","quince","dieciséis","diecisiete","dieciocho","diecinueve","veinte",
+    "veintiuno","veintidós","veintitrés","veinticuatro","veinticinco","veintiséis","veintisiete","veintiocho","veintinueve",
+    "treinta", "treinta y uno", "treinta y dos", "treinta y tres", "treinta y cuatro", "treinta y cinco", "treinta y seis", "treinta y siete", "treinta y ocho", "treinta y nueve",
+    "cuarenta", "cuarenta y uno", "cuarenta y dos", "cuarenta y tres", "cuarenta y cuatro", "cuarenta y cinco", "cuarenta y seis", "cuarenta y siete", "cuarenta y ocho", "cuarenta y nueve",
+    "cincuenta", "cincuenta y uno", "cincuenta y dos", "cincuenta y tres", "cincuenta y cuatro", "cincuenta y cinco", "cincuenta y seis", "cincuenta y siete", "cincuenta y ocho", "cincuenta y nueve",
+    "sesenta", "sesenta y uno", "sesenta y dos", "sesenta y tres", "sesenta y cuatro", "sesenta y cinco", "sesenta y seis", "sesenta y siete", "sesenta y ocho", "sesenta y nueve",
+    "setenta", "setenta y uno", "setenta y dos", "setenta y tres", "setenta y cuatro", "setenta y cinco", "setenta y seis", "setenta y siete", "setenta y ocho", "setenta y nueve",
+    "ochenta", "ochenta y uno", "ochenta y dos", "ochenta y tres", "ochenta y cuatro", "ochenta y cinco", "ochenta y seis", "ochenta y siete", "ochenta y ocho", "ochenta y nueve",
+    "noventa", "noventa y uno", "noventa y dos", "noventa y tres", "noventa y cuatro", "noventa y cinco", "noventa y seis", "noventa y siete", "noventa y ocho", "noventa y nueve"
+  ];
+
+  /* --- DYNAMIC VERBS DATA --- */
+  let currentPronoun = 'yo';
+
+  const verbsData = {
+    basic: [
+      { 
+        icon: "✨", 
+        forms: { yo: "soy", tu: "eres", el: "es", nosotros: "somos", vosotros: "sois", ellos: "son" },
+        enForms: { yo: "I am (Identity)", tu: "You are (Identity)", el: "He/She is (Identity)", nosotros: "We are (Identity)", vosotros: "You all are (Identity)", ellos: "They are (Identity)" },
+        examples: { yo: "Soy estudiante.", tu: "Eres estudiante.", el: "Es estudiante.", nosotros: "Somos estudiantes.", vosotros: "Sois estudiantes.", ellos: "Son estudiantes." }
+      },
+      { 
+        icon: "📍", 
+        forms: { yo: "estoy", tu: "estás", el: "está", nosotros: "estamos", vosotros: "estáis", ellos: "están" },
+        enForms: { yo: "I am (States/Loc)", tu: "You are (States/Loc)", el: "He/She is (States/Loc)", nosotros: "We are (States/Loc)", vosotros: "You all are (States/Loc)", ellos: "They are (States/Loc)" },
+        examples: { yo: "Estoy bien.", tu: "Estás bien.", el: "Está bien.", nosotros: "Estamos bien.", vosotros: "Estáis bien.", ellos: "Están bien." }
+      },
+      { 
+        icon: "🎂", 
+        forms: { yo: "tengo", tu: "tienes", el: "tiene", nosotros: "tenemos", vosotros: "tenéis", ellos: "tienen" },
+        enForms: { yo: "I have (Age/Poss)", tu: "You have (Age/Poss)", el: "He/She has (Age/Poss)", nosotros: "We have (Age/Poss)", vosotros: "You all have (Age/Poss)", ellos: "They have (Age/Poss)" },
+        examples: { yo: "Tengo ... años.", tu: "Tienes ... años.", el: "Tiene ... años.", nosotros: "Tenemos ... años.", vosotros: "Tenéis ... años.", ellos: "Tienen ... años." }
+      }
+    ],
+    routine: [
+      { icon: "🛌", forms: { yo: "me levanto", tu: "te levantas", el: "se levanta", nosotros: "nos levantamos", vosotros: "os levantáis", ellos: "se levantan" }, enForms: { yo: "I get up", tu: "You get up", el: "He/She gets up", nosotros: "We get up", vosotros: "You all get up", ellos: "They get up" } },
+      { icon: "🧼", forms: { yo: "me lavo la cara", tu: "te lavas la cara", el: "se lava la cara", nosotros: "nos lavamos la cara", vosotros: "os laváis la cara", ellos: "se lavan la cara" }, enForms: { yo: "I wash my face", tu: "You wash your face", el: "He/She washes his/her face", nosotros: "We wash our faces", vosotros: "You all wash your faces", ellos: "They wash their faces" } },
+      { icon: "🪥", forms: { yo: "me cepillo los dientes", tu: "te cepillas los dientes", el: "se cepilla los dientes", nosotros: "nos cepillamos los dientes", vosotros: "os cepilláis los dientes", ellos: "se cepillan los dientes" }, enForms: { yo: "I brush my teeth", tu: "You brush your teeth", el: "He/She brushes his/her teeth", nosotros: "We brush our teeth", vosotros: "You all brush your teeth", ellos: "They brush their teeth" } },
+      { icon: "🚿", forms: { yo: "me ducho", tu: "te duchas", el: "se ducha", nosotros: "nos duchamos", vosotros: "os ducháis", ellos: "se duchan" }, enForms: { yo: "I take a shower", tu: "You take a shower", el: "He/She takes a shower", nosotros: "We take a shower", vosotros: "You all take a shower", ellos: "They take a shower" } },
+      { icon: "💇", forms: { yo: "me peino", tu: "te peinas", el: "se peina", nosotros: "nos peinamos", vosotros: "os peináis", ellos: "se peinan" }, enForms: { yo: "I comb my hair", tu: "You comb your hair", el: "He/She combs his/her hair", nosotros: "We comb our hair", vosotros: "You all comb your hair", ellos: "They comb their hair" } },
+      { icon: "🍳", forms: { yo: "desayuno", tu: "desayunas", el: "desayuna", nosotros: "desayunamos", vosotros: "desayunáis", ellos: "desayunan" }, enForms: { yo: "I have breakfast", tu: "You have breakfast", el: "He/She has breakfast", nosotros: "We have breakfast", vosotros: "You all have breakfast", ellos: "They have breakfast" } },
+      { icon: "🥘", forms: { yo: "almuerzo", tu: "almuerzas", el: "almuerza", nosotros: "almorzamos", vosotros: "almorzáis", ellos: "almuerzan" }, enForms: { yo: "I eat lunch", tu: "You eat lunch", el: "He/She eats lunch", nosotros: "We eat lunch", vosotros: "You all eat lunch", ellos: "They eat lunch" } },
+      { icon: "🍲", forms: { yo: "ceno", tu: "cenas", el: "cena", nosotros: "cenamos", vosotros: "cenáis", ellos: "cenan" }, enForms: { yo: "I have dinner", tu: "You have dinner", el: "He/She has dinner", nosotros: "We have dinner", vosotros: "You all have dinner", ellos: "They have dinner" } },
+      { icon: "🎒", forms: { yo: "voy a la escuela", tu: "vas a la escuela", el: "va a la escuela", nosotros: "vamos a la escuela", vosotros: "vais a la escuela", ellos: "van a la escuela" }, enForms: { yo: "I go to school", tu: "You go to school", el: "He/She goes to school", nosotros: "We go to school", vosotros: "You all go to school", ellos: "They go to school" } },
+      { icon: "📝", forms: { yo: "hago la tarea / los deberes", tu: "haces la tarea / los deberes", el: "hace la tarea / los deberes", nosotros: "hacemos la tarea / los deberes", vosotros: "hacéis la tarea / los deberes", ellos: "hacen la tarea / los deberes" }, enForms: { yo: "I do homework", tu: "You do homework", el: "He/She does homework", nosotros: "We do homework", vosotros: "You all do homework", ellos: "They do homework" } },
+      { icon: "💼", forms: { yo: "trabajo", tu: "trabajas", el: "trabaja", nosotros: "trabajamos", vosotros: "trabajáis", ellos: "trabajan" }, enForms: { yo: "I work", tu: "You work", el: "He/She works", nosotros: "We work", vosotros: "You all work", ellos: "They work" } },
+      { icon: "📖", forms: { yo: "estudio español/inglés", tu: "estudias español/inglés", el: "estudia español/inglés", nosotros: "estudiamos español/inglés", vosotros: "estudiáis español/inglés", ellos: "estudian español/inglés" }, enForms: { yo: "I study", tu: "You study", el: "He/She studies", nosotros: "We study", vosotros: "You all study", ellos: "They study" } },
+      { icon: "⚽", forms: { yo: "juego", tu: "juegas", el: "juega", nosotros: "jugamos", vosotros: "jugáis", ellos: "juegan" }, enForms: { yo: "I play", tu: "You play", el: "He/She plays", nosotros: "We play", vosotros: "You all play", ellos: "They play" } },
+      { icon: "📺", forms: { yo: "veo la tele", tu: "ves la tele", el: "ve la tele", nosotros: "vemos la tele", vosotros: "veis la tele", ellos: "ven la tele" }, enForms: { yo: "I watch TV", tu: "You watch TV", el: "He/She watches TV", nosotros: "We watch TV", vosotros: "You all watch TV", ellos: "They watch TV" } },
+      { icon: "💤", forms: { yo: "me acuesto", tu: "te acuestas", el: "se acuesta", nosotros: "nos acostamos", vosotros: "os acostáis", ellos: "se acuestan" }, enForms: { yo: "I go to bed", tu: "You go to bed", el: "He/She goes to bed", nosotros: "We go to bed", vosotros: "You all go to bed", ellos: "They go to bed" } }
+    ]
+  };
+
+  /* --- STORY TIME DATA --- */
+  const storyDataYo = [
+    { en: "Hello, good morning. I am...", es: "Hola, buenos días. Soy ..." },
+    { en: "I am 14 years old.", es: "Tengo catorce años." },
+    { en: "I am a student.", es: "Soy estudiante." },
+    { en: "I am always very happy.", es: "Siempre estoy muy feliz." },
+    { en: "I get up at 6:00 in the morning.", es: "Me levanto a las seis de la mañana." },
+    { en: "I wash my face and brush my teeth.", es: "Me lavo la cara y me cepillo los dientes." },
+    { en: "I have breakfast at 7:00.", es: "Desayuno a las siete." },
+    { en: "I go to school at 8:00.", es: "Voy a la escuela a las ocho." },
+    { en: "I eat lunch at 12:00.", es: "Almuerzo a las doce." },
+    { en: "I take a shower at 5:00 in the afternoon.", es: "Me ducho a las cinco de la tarde." },
+    { en: "I do homework at 6:00.", es: "Hago la tarea (o los deberes) a las seis." },
+    { en: "I have dinner at 7:00 at home.", es: "Ceno a las siete en casa." },
+    { en: "I study Spanish at 8:00.", es: "Estudio español a las ocho." },
+    { en: "I go to bed at 10:00 at night.", es: "Me acuesto a las diez de la noche." }
+  ];
+
+  const storyDataAna = [
+    { en: "Hello, good morning. She is Ana.", es: "Hola, buenos días. Ella es Ana." },
+    { en: "She is 14 years old.", es: "Tiene catorce años." },
+    { en: "She is a student.", es: "Es estudiante." },
+    { en: "She is always very happy.", es: "Siempre está muy feliz." },
+    { en: "She gets up at 6:00 in the morning.", es: "Se levanta a las seis de la mañana." },
+    { en: "She washes her face and brushes her teeth.", es: "Se lava la cara y se cepilla los dientes." },
+    { en: "She has breakfast at 7:00.", es: "Desayuna a las siete." },
+    { en: "She goes to school at 8:00.", es: "Va a la escuela a las ocho." },
+    { en: "She eats lunch at 12:00.", es: "Almuerza a las doce." },
+    { en: "She takes a shower at 5:00 in the afternoon.", es: "Se ducha a las cinco de la tarde." },
+    { en: "She does homework at 6:00.", es: "Hace la tarea (o los deberes) a las seis." },
+    { en: "She has dinner at 7:00 at home.", es: "Cena a las siete en casa." },
+    { en: "She studies Spanish at 8:00.", es: "Estudia español a las ocho." },
+    { en: "She goes to bed at 10:00 at night.", es: "Se acuesta a las diez de la noche." }
+  ];
+
+  let currentStoryData = storyDataYo;
+  let currentStoryIndex = 0;
+
+  window.onload = function() {
+    renderNumbers();
+    renderDynamicVerbs();
+    updateTimeDisplay();
+    initStory();
+  };
+
+  function renderNumbers() {
+    const grid = document.getElementById('numberGrid');
+    numbersEs.forEach((num, index) => {
+      let div = document.createElement('div');
+      div.className = 'num-card';
+      div.onclick = () => speak(num);
+      div.innerHTML = `
+        <span class="num-digit">${index}</span>
+        <span class="num-word">${num}</span>
+      `;
+      grid.appendChild(div);
+    });
+  }
+
+  function selectPronoun(pronoun) {
+    currentPronoun = pronoun;
+    document.querySelectorAll('.pronoun-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById('btn-' + pronoun).classList.add('active');
+    renderDynamicVerbs();
+  }
+
+  function renderDynamicVerbs() {
+    const basicGrid = document.getElementById('basicVerbsGrid');
+    basicGrid.innerHTML = '';
+    verbsData.basic.forEach(item => {
+      let wordEs = item.forms[currentPronoun];
+      let wordEn = item.enForms[currentPronoun];
+      let exampleEs = item.examples[currentPronoun];
+      let div = document.createElement('div');
+      div.className = 'vocab-card';
+      
+      div.onclick = () => {
+        if (exampleEs) speak(exampleEs);
+        else speak(wordEs);
+      };
+      
+      let exampleHtml = exampleEs ? `<span class="sub-note" style="color: #e65100; font-weight: bold; margin-top: 8px;">Ex: ${exampleEs}</span>` : "";
+      
+      div.innerHTML = `
+        <span class="emoji">${item.icon}</span>
+        <span class="es-text" style="font-size: 14px;">${wordEs}</span>
+        <span class="en-text">${wordEn}</span>
+        ${exampleHtml}
+      `;
+      basicGrid.appendChild(div);
+    });
+
+    const routineGrid = document.getElementById('routineVerbsGrid');
+    routineGrid.innerHTML = '';
+    
+    // UPDATED AND RE-STYLED DIALOGUE BOX FOR "TÚ"
+    if (currentPronoun === 'tu') {
+      let dialogDiv = document.createElement('div');
+      dialogDiv.style.gridColumn = "1 / -1";
+      dialogDiv.style.background = "#E3F2FD";
+      dialogDiv.style.padding = "25px";
+      dialogDiv.style.borderRadius = "12px";
+      dialogDiv.style.borderLeft = "6px solid #2196F3";
+      dialogDiv.style.marginBottom = "15px";
+      
+      dialogDiv.innerHTML = `
+        <h4 style="color:#1565C0; margin-top:0; font-size:1.4em;">💬 Diálogo (Dialogue)</h4>
+        <p style="font-size:1.1em; color:#333; margin-bottom: 20px;">
+          Practice these full interactions using the "¿A qué hora...?" structure. Click each block to listen:
+        </p>
+        <div style="display:flex; flex-direction:column; gap:15px;">
+          <button style="background:white; border:2px solid #2196F3; border-radius:10px; padding:15px; cursor:pointer; text-align:left; color:#333; font-size:1.1em;" onclick="speak('¿A qué hora te levantas? Me levanto a las siete.')">
+            <strong style="color:#1565C0;">A:</strong> ¿A qué hora te levantas? <span style="color:#666; font-size:0.9em;">(What time do you get up?)</span><br>
+            <strong style="color:#e65100;">B:</strong> Me levanto a las siete. <span style="color:#666; font-size:0.9em;">(I get up at seven.)</span>
+          </button>
+          
+          <button style="background:white; border:2px solid #2196F3; border-radius:10px; padding:15px; cursor:pointer; text-align:left; color:#333; font-size:1.1em;" onclick="speak('¿A qué hora cenas? Ceno a las ocho.')">
+            <strong style="color:#1565C0;">A:</strong> ¿A qué hora cenas? <span style="color:#666; font-size:0.9em;">(What time do you have dinner?)</span><br>
+            <strong style="color:#e65100;">B:</strong> Ceno a las ocho. <span style="color:#666; font-size:0.9em;">(I have dinner at eight.)</span>
+          </button>
+
+          <button style="background:white; border:2px solid #2196F3; border-radius:10px; padding:15px; cursor:pointer; text-align:left; color:#333; font-size:1.1em;" onclick="speak('¿A qué hora te acuestas? Me acuesto a las diez.')">
+            <strong style="color:#1565C0;">A:</strong> ¿A qué hora te acuestas? <span style="color:#666; font-size:0.9em;">(What time do you go to bed?)</span><br>
+            <strong style="color:#e65100;">B:</strong> Me acuesto a las diez. <span style="color:#666; font-size:0.9em;">(I go to bed at ten.)</span>
+          </button>
+        </div>
+      `;
+      routineGrid.appendChild(dialogDiv);
+    }
+
+    verbsData.routine.forEach(item => {
+      let wordEs = item.forms[currentPronoun];
+      let wordEn = item.enForms[currentPronoun];
+      let div = document.createElement('div');
+      div.className = 'vocab-card';
+      let isLong = wordEs.length > 20; 
+      let fontSize = isLong ? "13px" : "16px";
+      div.onclick = () => speak(wordEs);
+      div.innerHTML = `
+        <span class="emoji">${item.icon}</span>
+        <span class="es-text" style="font-size: ${fontSize};">${wordEs}</span>
+        <span class="en-text">${wordEn}</span>
+      `;
+      routineGrid.appendChild(div);
+    });
+  }
+
+  /* --- TIME LOGIC (12h + Minutes) FOR SENTENCE BUILDER --- */
+  function getTimeInfo() {
+    const rawHour = parseInt(document.getElementById('timeSlider').value);
+    const minute = document.getElementById('minSelect').value;
+    
+    let displayHour = rawHour; 
+    let periodText = "";
+    let periodEn = "";
+
+    if (rawHour > 12) {
+        displayHour = rawHour - 12;
+    } else if (rawHour === 0) {
+        displayHour = 12; 
+    }
+
+    if (rawHour === 12) {
+        periodText = "del mediodía"; 
+        periodEn = "at noon";
+    } else if (rawHour === 0 || rawHour <= 5) {
+        periodText = "de la madrugada";
+        periodEn = "early morning";
+    } else if (rawHour >= 6 && rawHour < 12) {
+        periodText = "de la mañana";
+        periodEn = "in the morning";
+    } else if (rawHour >= 13 && rawHour <= 20) {
+        periodText = "de la tarde";
+        periodEn = "in the afternoon";
+    } else { 
+        periodText = "de la noche";
+        periodEn = "at night";
+    }
+
+    return { rawHour, displayHour, periodText, periodEn, minute };
+  }
+
+  function updateTimeDisplay() {
+    const { rawHour, displayHour, periodText, minute } = getTimeInfo();
+    let displayTime = displayHour + ":" + minute;
+    document.getElementById('timeDisplay').innerText = displayTime;
+    document.getElementById('periodDisplay').innerText = periodText;
+  }
+
+  /* --- BUILD & SPEAK --- */
+  function buildAndSpeak() {
+    const actSelect = document.getElementById('actSelect');
+    const locSelect = document.getElementById('locSelect');
+    
+    const act = actSelect.value;
+    const loc = locSelect.value; 
+    
+    if(!act) { alert("Please select an Activity!"); return; }
+
+    const actOptionText = actSelect.options[actSelect.selectedIndex].text;
+    const actEn = actOptionText.split('(')[1].replace(')', '').trim();
+
+    const locMap = {
+        "en casa": "at home", "en la escuela": "at school", "en la oficina": "at the office",
+        "en la biblioteca": "at the library", "en el parque": "in the park",
+        "en el restaurante": "at the restaurant", "en mi habitación": "in my room", "en el baño": "in the bathroom"
+    };
+    const locEn = locMap[loc] || "";
+    
+    const { rawHour, displayHour, periodText, periodEn, minute } = getTimeInfo();
+
+    let locSpStr = loc ? ` <span class='highlight-loc'>${loc}</span>` : "";
+    let locSpText = loc ? ` ${loc}` : ""; 
+    let locEnStr = loc ? ` ${locEn}` : "";
+
+    let minSp = "";
+    if (minute === "15") minSp = " y cuarto";
+    else if (minute === "30") minSp = " y media";
+    else if (minute !== "00") minSp = " y " + numbersEs[parseInt(minute)];
+
+    let fullSp = "";
+    let speakSp = "";
+    
+    let hourWord = displayHour === 1 ? "a la una" : `a las ${displayHour}`;
+    
+    let timeVisual = "";
+    if (displayHour === 1 && minute === "00") {
+        timeVisual = "a la una";
+    } else if (displayHour === 1) {
+        timeVisual = `a la 1:${minute}`;
+    } else {
+        timeVisual = `a las ${displayHour}:${minute}`;
+    }
+    
+    let timeSpeak = hourWord + minSp;
+
+    fullSp = `<span class='highlight'>${act}</span>${locSpStr} <span class='highlight-time'>${timeVisual} ${periodText}</span>.`;
+    speakSp = `${act}${locSpText} ${timeSpeak} ${periodText}.`;
+
+    let timeEn = "";
+    if (rawHour === 12) {
+        if (minute === "00") timeEn = "at noon";
+        else timeEn = `at 12:${minute} pm`; 
+    } else {
+        if (displayHour === 1 && minute === "00") timeEn = "at one";
+        else if (minute === "00") timeEn = `at ${displayHour}`; 
+        else timeEn = `at ${displayHour}:${minute}`;
+        
+        timeEn += ` ${periodEn}`;
+    }
+
+    let fullEn = `${actEn}${locEnStr} ${timeEn}.`;
+
+    const resultBox = document.getElementById('result-box');
+    resultBox.style.display = "block";
+    
+    document.getElementById('resSp').innerHTML = fullSp;
+    document.getElementById('resEn').innerText = fullEn;
+
+    speak(speakSp);
+  }
+
+  /* --- STORY TIME LOGIC --- */
+  function initStory() {
+    document.getElementById('totalStory').innerText = currentStoryData.length;
+    loadStorySentence(0);
+  }
+
+  function switchStoryMode(mode) {
+    document.getElementById('btn-story-yo').classList.remove('active');
+    document.getElementById('btn-story-ana').classList.remove('active');
+    
+    if (mode === 'yo') {
+      currentStoryData = storyDataYo;
+      document.getElementById('btn-story-yo').classList.add('active');
+    } else {
+      currentStoryData = storyDataAna;
+      document.getElementById('btn-story-ana').classList.add('active');
+    }
+    
+    document.getElementById('totalStory').innerText = currentStoryData.length;
+    loadStorySentence(0);
+  }
+
+  function loadStorySentence(index) {
+    if (index >= currentStoryData.length) index = 0;
+    if (index < 0) index = currentStoryData.length - 1;
+    currentStoryIndex = index;
+    
+    document.getElementById('storyEn').innerText = currentStoryData[index].en;
+    document.getElementById('storyEs').innerText = currentStoryData[index].es;
+    document.getElementById('storyCount').innerText = index + 1;
+    document.getElementById('storyCardElement').classList.remove('is-flipped');
+  }
+
+  function flipStoryCard() {
+    document.getElementById('storyCardElement').classList.toggle('is-flipped');
+  }
+
+  function nextStorySentence() {
+    const card = document.getElementById('storyCardElement');
+    if(card.classList.contains('is-flipped')) {
+        card.classList.remove('is-flipped');
+        setTimeout(() => { loadStorySentence(currentStoryIndex + 1); }, 300); 
+    } else {
+        loadStorySentence(currentStoryIndex + 1);
+    }
+  }
+
+  function prevStorySentence() {
+    const card = document.getElementById('storyCardElement');
+    if(card.classList.contains('is-flipped')) {
+        card.classList.remove('is-flipped');
+        setTimeout(() => { loadStorySentence(currentStoryIndex - 1); }, 300); 
+    } else {
+        loadStorySentence(currentStoryIndex - 1);
+    }
+  }
+
+  function playStoryAudio() {
+    speak(currentStoryData[currentStoryIndex].es);
+  }
+
+  /* --- POEM AUDIO HELPERS --- */
+  function speakPoem() {
+    const fullPoem = "Mariposa del aire, qué hermosa eres, mariposa del aire dorada y verde. Luz de candil, mariposa del aire, ¡quédate ahí, ahí, ahí! No te quieres parar, pararte no quieres. Mariposa del aire dorada y verde. Luz de candil, mariposa del aire, ¡quédate ahí, ahí, ahí! ¡Quédate ahí! Mariposa, ¿estás ahí?";
+    speak(fullPoem);
+  }
+
+  function speakMistralPoemFull() {
+    const fullPoem = "Dame la mano y danzaremos; dame la mano y me amarás. Como una sola flor seremos, como una flor, y nada más. El mismo verso cantaremos, al mismo paso bailarás. Como una espiga ondularemos, como una espiga, y nada más. Te llamas Rosa y yo Esperanza; pero tu nombre olvidarás, porque seremos una danza en la colina y nada más.";
+    speak(fullPoem);
+  }
+
+  /* --- SUB-TAB SWITCHING FOR POETRY --- */
+  function switchPoemTab(poemId) {
+    document.querySelectorAll('.poem-sub-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.poem-tab-btn').forEach(el => el.classList.remove('active'));
+    
+    if (poemId === 'lorca') {
+      document.getElementById('poem-sub-lorca').classList.add('active');
+      document.getElementById('btn-poem-lorca').classList.add('active');
+    } else if (poemId === 'mistral') {
+      document.getElementById('poem-sub-mistral').classList.add('active');
+      document.getElementById('btn-poem-mistral').classList.add('active');
+    }
+  }
+
+  /* --- TTS FUNCTION --- */
+  function speak(text) {
+    if (!('speechSynthesis' in window)) {
+      console.log("TTS not supported.");
+      return;
+    }
+
+    let cleanText = text.replace(/<[^>]*>/g, '');
+    cleanText = cleanText + ".";
+    
+    window.speechSynthesis.cancel();
+    let utterance = new SpeechSynthesisUtterance(cleanText);
+    
+    utterance.rate = 0.9; 
+    utterance.pitch = 1.0;
+    utterance.lang = 'es-ES'; 
+    
+    if (availableVoices.length > 0) {
+      let bestVoice = availableVoices.find(v => 
+        v.lang.startsWith('es') && 
+        (v.name.includes('Premium') || v.name.includes('Google') || v.name.includes('Microsoft'))
+      );
+      if (!bestVoice) bestVoice = availableVoices.find(v => v.lang.startsWith('es'));
+      if (bestVoice) utterance.voice = bestVoice;
+    }
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  /* --- TAB SWITCHING --- */
+  function switchTab(tabId) {
+    document.querySelectorAll('.section-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(btn => {
+      if (btn.getAttribute('onclick').includes(tabId)) {
+        btn.classList.add('active');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
